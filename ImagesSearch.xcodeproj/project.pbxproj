@@ -18,6 +18,7 @@
 		FD340D81292CC71500B40917 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD340D7D292CC71500B40917 /* OpenSans-Regular.ttf */; };
 		FD340D82292CC71500B40917 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD340D7E292CC71500B40917 /* OpenSans-SemiBold.ttf */; };
 		FD340D83292CC71500B40917 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD340D7F292CC71500B40917 /* OpenSans-ExtraBold.ttf */; };
+		FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD340D84292CCF5900B40917 /* UIView+Overlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FD340D7D292CC71500B40917 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		FD340D7E292CC71500B40917 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		FD340D7F292CC71500B40917 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FD340D84292CCF5900B40917 /* UIView+Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Overlay.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		FD340D6D292CC48100B40917 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FD340D84292CCF5900B40917 /* UIView+Overlay.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD340D57292CC34700B40917 /* ViewController.swift in Sources */,
+				FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */,
 				FD340D53292CC34700B40917 /* AppDelegate.swift in Sources */,
 				FD340D55292CC34700B40917 /* SceneDelegate.swift in Sources */,
 			);
