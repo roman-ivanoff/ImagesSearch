@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundImage: UIImageView!
-    
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()

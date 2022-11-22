@@ -39,7 +39,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @available(iOS 13, *)
     func sceneDidEnterBackground(_ scene: UIScene) {
     }
-
-
 }
-
