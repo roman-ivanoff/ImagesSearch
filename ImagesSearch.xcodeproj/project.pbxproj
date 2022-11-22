@@ -13,6 +13,11 @@
 		FD340D5A292CC34700B40917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD340D58292CC34700B40917 /* Main.storyboard */; };
 		FD340D5C292CC34900B40917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD340D5B292CC34900B40917 /* Assets.xcassets */; };
 		FD340D5F292CC34900B40917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD340D5D292CC34900B40917 /* LaunchScreen.storyboard */; };
+		FD340D6C292CC46600B40917 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD340D6B292CC46600B40917 /* Localizable.strings */; };
+		FD340D80292CC71500B40917 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD340D7C292CC71500B40917 /* OpenSans-Bold.ttf */; };
+		FD340D81292CC71500B40917 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD340D7D292CC71500B40917 /* OpenSans-Regular.ttf */; };
+		FD340D82292CC71500B40917 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD340D7E292CC71500B40917 /* OpenSans-SemiBold.ttf */; };
+		FD340D83292CC71500B40917 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD340D7F292CC71500B40917 /* OpenSans-ExtraBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		FD340D5B292CC34900B40917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD340D5E292CC34900B40917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD340D60292CC34900B40917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD340D6B292CC46600B40917 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		FD340D7C292CC71500B40917 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../../../../../../Desktop/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		FD340D7D292CC71500B40917 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../../../../../../Desktop/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		FD340D7E292CC71500B40917 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiBold.ttf"; path = "../../../../../../Desktop/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		FD340D7F292CC71500B40917 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "../../../../../../Desktop/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,68 @@
 		FD340D51292CC34700B40917 /* ImagesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				FD340D52292CC34700B40917 /* AppDelegate.swift */,
-				FD340D54292CC34700B40917 /* SceneDelegate.swift */,
-				FD340D56292CC34700B40917 /* ViewController.swift */,
-				FD340D58292CC34700B40917 /* Main.storyboard */,
-				FD340D5B292CC34900B40917 /* Assets.xcassets */,
-				FD340D5D292CC34900B40917 /* LaunchScreen.storyboard */,
-				FD340D60292CC34900B40917 /* Info.plist */,
+				FD340D6D292CC48100B40917 /* Extensions */,
+				FD340D69292CC3DD00B40917 /* Resources */,
+				FD340D68292CC3D200B40917 /* Storyboards */,
+				FD340D67292CC3C800B40917 /* Controllers */,
+				FD340D66292CC3B500B40917 /* Supporting Files */,
 			);
 			path = ImagesSearch;
+			sourceTree = "<group>";
+		};
+		FD340D66292CC3B500B40917 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD340D5D292CC34900B40917 /* LaunchScreen.storyboard */,
+				FD340D52292CC34700B40917 /* AppDelegate.swift */,
+				FD340D54292CC34700B40917 /* SceneDelegate.swift */,
+				FD340D60292CC34900B40917 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD340D67292CC3C800B40917 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD340D56292CC34700B40917 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FD340D68292CC3D200B40917 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FD340D58292CC34700B40917 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FD340D69292CC3DD00B40917 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD340D7B292CC6CE00B40917 /* Fonts */,
+				FD340D5B292CC34900B40917 /* Assets.xcassets */,
+				FD340D6B292CC46600B40917 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FD340D6D292CC48100B40917 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FD340D7B292CC6CE00B40917 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FD340D7C292CC71500B40917 /* OpenSans-Bold.ttf */,
+				FD340D7F292CC71500B40917 /* OpenSans-ExtraBold.ttf */,
+				FD340D7D292CC71500B40917 /* OpenSans-Regular.ttf */,
+				FD340D7E292CC71500B40917 /* OpenSans-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD340D5F292CC34900B40917 /* LaunchScreen.storyboard in Resources */,
+				FD340D6C292CC46600B40917 /* Localizable.strings in Resources */,
+				FD340D82292CC71500B40917 /* OpenSans-SemiBold.ttf in Resources */,
+				FD340D83292CC71500B40917 /* OpenSans-ExtraBold.ttf in Resources */,
 				FD340D5C292CC34900B40917 /* Assets.xcassets in Resources */,
+				FD340D80292CC71500B40917 /* OpenSans-Bold.ttf in Resources */,
+				FD340D81292CC71500B40917 /* OpenSans-Regular.ttf in Resources */,
 				FD340D5A292CC34700B40917 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +356,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ImagesSearch/Info.plist;
+				INFOPLIST_FILE = "ImagesSearch/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -315,7 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ImagesSearch/Info.plist;
+				INFOPLIST_FILE = "ImagesSearch/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
