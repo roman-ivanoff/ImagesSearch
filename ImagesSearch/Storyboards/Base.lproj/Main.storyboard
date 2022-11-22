@@ -31,6 +31,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IKa-J7-5cX"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="lmh-RE-iMA" id="ooA-rF-Hy9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
