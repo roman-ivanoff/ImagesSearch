@@ -29,6 +29,8 @@
 		FD9C7D21292E7831008BD1DF /* PixabayImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D20292E7831008BD1DF /* PixabayImages.swift */; };
 		FD9C7D23292E7876008BD1DF /* ImagesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9C7D22292E7876008BD1DF /* ImagesList.storyboard */; };
 		FD9C7D25292E7884008BD1DF /* ImageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9C7D24292E7884008BD1DF /* ImageDetail.storyboard */; };
+		FD9C7D27292E78B3008BD1DF /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D26292E78B3008BD1DF /* ImagesListViewController.swift */; };
+		FD9C7D29292E78C0008BD1DF /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		FD9C7D20292E7831008BD1DF /* PixabayImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayImages.swift; sourceTree = "<group>"; };
 		FD9C7D22292E7876008BD1DF /* ImagesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagesList.storyboard; sourceTree = "<group>"; };
 		FD9C7D24292E7884008BD1DF /* ImageDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetail.storyboard; sourceTree = "<group>"; };
+		FD9C7D26292E78B3008BD1DF /* ImagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewController.swift; sourceTree = "<group>"; };
+		FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				FD340D56292CC34700B40917 /* ViewController.swift */,
+				FD9C7D26292E78B3008BD1DF /* ImagesListViewController.swift */,
+				FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */,
+				FD9C7D27292E78B3008BD1DF /* ImagesListViewController.swift in Sources */,
 				FD9C7D1F292E7793008BD1DF /* ImageHit.swift in Sources */,
 				FD9C7D21292E7831008BD1DF /* PixabayImages.swift in Sources */,
 				FD9C7D12292E75AA008BD1DF /* UIButton+Configuration.swift in Sources */,
@@ -303,6 +310,7 @@
 				FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */,
 				FD340D53292CC34700B40917 /* AppDelegate.swift in Sources */,
 				FD9C7D10292E7576008BD1DF /* DropdownButton.swift in Sources */,
+				FD9C7D29292E78C0008BD1DF /* ImageDetailViewController.swift in Sources */,
 				FD9C7D1A292E773E008BD1DF /* ServiceError.swift in Sources */,
 				FD9C7D1D292E776F008BD1DF /* ImageType.swift in Sources */,
 				FD340D55292CC34700B40917 /* SceneDelegate.swift in Sources */,
