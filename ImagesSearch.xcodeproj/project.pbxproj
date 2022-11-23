@@ -23,6 +23,7 @@
 		FD9C7D12292E75AA008BD1DF /* UIButton+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D11292E75AA008BD1DF /* UIButton+Configuration.swift */; };
 		FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D13292E76D5008BD1DF /* SearchButton.swift */; };
 		FD9C7D16292E76F8008BD1DF /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */; };
+		FD9C7D1A292E773E008BD1DF /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D19292E773E008BD1DF /* ServiceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FD9C7D11292E75AA008BD1DF /* UIButton+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Configuration.swift"; sourceTree = "<group>"; };
 		FD9C7D13292E76D5008BD1DF /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		FD9C7D19292E773E008BD1DF /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		FD340D51292CC34700B40917 /* ImagesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				FD9C7D17292E7725008BD1DF /* Services */,
 				FD9C7D0E292E755D008BD1DF /* Custom Views */,
 				FD340D6D292CC48100B40917 /* Extensions */,
 				FD340D69292CC3DD00B40917 /* Resources */,
@@ -151,6 +154,22 @@
 				FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		FD9C7D17292E7725008BD1DF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C7D18292E772C008BD1DF /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FD9C7D18292E772C008BD1DF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FD9C7D19292E773E008BD1DF /* ServiceError.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +276,7 @@
 				FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */,
 				FD340D53292CC34700B40917 /* AppDelegate.swift in Sources */,
 				FD9C7D10292E7576008BD1DF /* DropdownButton.swift in Sources */,
+				FD9C7D1A292E773E008BD1DF /* ServiceError.swift in Sources */,
 				FD340D55292CC34700B40917 /* SceneDelegate.swift in Sources */,
 				FD9C7D16292E76F8008BD1DF /* SearchTextField.swift in Sources */,
 			);
