@@ -22,6 +22,7 @@
 		FD9C7D10292E7576008BD1DF /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D0F292E7576008BD1DF /* DropdownButton.swift */; };
 		FD9C7D12292E75AA008BD1DF /* UIButton+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D11292E75AA008BD1DF /* UIButton+Configuration.swift */; };
 		FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D13292E76D5008BD1DF /* SearchButton.swift */; };
+		FD9C7D16292E76F8008BD1DF /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FD9C7D0F292E7576008BD1DF /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FD9C7D11292E75AA008BD1DF /* UIButton+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Configuration.swift"; sourceTree = "<group>"; };
 		FD9C7D13292E76D5008BD1DF /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				FD9C7D0F292E7576008BD1DF /* DropdownButton.swift */,
 				FD9C7D13292E76D5008BD1DF /* SearchButton.swift */,
+				FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				FD340D53292CC34700B40917 /* AppDelegate.swift in Sources */,
 				FD9C7D10292E7576008BD1DF /* DropdownButton.swift in Sources */,
 				FD340D55292CC34700B40917 /* SceneDelegate.swift in Sources */,
+				FD9C7D16292E76F8008BD1DF /* SearchTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

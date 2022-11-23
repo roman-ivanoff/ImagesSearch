@@ -22,4 +22,3 @@ class SearchButton: UIButton {
         layer.cornerRadius = 5
     }
 }
-
