@@ -27,6 +27,8 @@
 		FD9C7D1D292E776F008BD1DF /* ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D1C292E776F008BD1DF /* ImageType.swift */; };
 		FD9C7D1F292E7793008BD1DF /* ImageHit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D1E292E7793008BD1DF /* ImageHit.swift */; };
 		FD9C7D21292E7831008BD1DF /* PixabayImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D20292E7831008BD1DF /* PixabayImages.swift */; };
+		FD9C7D23292E7876008BD1DF /* ImagesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9C7D22292E7876008BD1DF /* ImagesList.storyboard */; };
+		FD9C7D25292E7884008BD1DF /* ImageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9C7D24292E7884008BD1DF /* ImageDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		FD9C7D1C292E776F008BD1DF /* ImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageType.swift; sourceTree = "<group>"; };
 		FD9C7D1E292E7793008BD1DF /* ImageHit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHit.swift; sourceTree = "<group>"; };
 		FD9C7D20292E7831008BD1DF /* PixabayImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayImages.swift; sourceTree = "<group>"; };
+		FD9C7D22292E7876008BD1DF /* ImagesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagesList.storyboard; sourceTree = "<group>"; };
+		FD9C7D24292E7884008BD1DF /* ImageDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				FD340D58292CC34700B40917 /* Main.storyboard */,
+				FD9C7D22292E7876008BD1DF /* ImagesList.storyboard */,
+				FD9C7D24292E7884008BD1DF /* ImageDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -251,11 +257,13 @@
 				FD340D5F292CC34900B40917 /* LaunchScreen.storyboard in Resources */,
 				FD340D6C292CC46600B40917 /* Localizable.strings in Resources */,
 				FD340D82292CC71500B40917 /* OpenSans-SemiBold.ttf in Resources */,
+				FD9C7D25292E7884008BD1DF /* ImageDetail.storyboard in Resources */,
 				FD340D83292CC71500B40917 /* OpenSans-ExtraBold.ttf in Resources */,
 				FD340D5C292CC34900B40917 /* Assets.xcassets in Resources */,
 				FD340D80292CC71500B40917 /* OpenSans-Bold.ttf in Resources */,
 				FD340D81292CC71500B40917 /* OpenSans-Regular.ttf in Resources */,
 				FD340D5A292CC34700B40917 /* Main.storyboard in Resources */,
+				FD9C7D23292E7876008BD1DF /* ImagesList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
