@@ -25,6 +25,7 @@
 		FD9C7D16292E76F8008BD1DF /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */; };
 		FD9C7D1A292E773E008BD1DF /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D19292E773E008BD1DF /* ServiceError.swift */; };
 		FD9C7D1D292E776F008BD1DF /* ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D1C292E776F008BD1DF /* ImageType.swift */; };
+		FD9C7D1F292E7793008BD1DF /* ImageHit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D1E292E7793008BD1DF /* ImageHit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		FD9C7D19292E773E008BD1DF /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		FD9C7D1C292E776F008BD1DF /* ImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageType.swift; sourceTree = "<group>"; };
+		FD9C7D1E292E7793008BD1DF /* ImageHit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				FD9C7D1C292E776F008BD1DF /* ImageType.swift */,
+				FD9C7D1E292E7793008BD1DF /* ImageHit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */,
+				FD9C7D1F292E7793008BD1DF /* ImageHit.swift in Sources */,
 				FD9C7D12292E75AA008BD1DF /* UIButton+Configuration.swift in Sources */,
 				FD340D57292CC34700B40917 /* ViewController.swift in Sources */,
 				FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */,
