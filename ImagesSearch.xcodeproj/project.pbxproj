@@ -21,6 +21,7 @@
 		FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD340D84292CCF5900B40917 /* UIView+Overlay.swift */; };
 		FD9C7D10292E7576008BD1DF /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D0F292E7576008BD1DF /* DropdownButton.swift */; };
 		FD9C7D12292E75AA008BD1DF /* UIButton+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D11292E75AA008BD1DF /* UIButton+Configuration.swift */; };
+		FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D13292E76D5008BD1DF /* SearchButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FD340D84292CCF5900B40917 /* UIView+Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Overlay.swift"; sourceTree = "<group>"; };
 		FD9C7D0F292E7576008BD1DF /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FD9C7D11292E75AA008BD1DF /* UIButton+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Configuration.swift"; sourceTree = "<group>"; };
+		FD9C7D13292E76D5008BD1DF /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				FD9C7D0F292E7576008BD1DF /* DropdownButton.swift */,
+				FD9C7D13292E76D5008BD1DF /* SearchButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */,
 				FD9C7D12292E75AA008BD1DF /* UIButton+Configuration.swift in Sources */,
 				FD340D57292CC34700B40917 /* ViewController.swift in Sources */,
 				FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */,
