@@ -57,6 +57,14 @@
                                     <action selector="searchAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xJq-HR-jMU"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search images, vectors and more" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2d-IP-jSn" customClass="SearchTextField" customModule="ImagesSearch" customModuleProvider="target">
+                                <rect key="frame" x="16" y="414" width="358" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="5zG-pP-oKd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,15 +79,18 @@
                                 <variation key="heightClass=compact-widthClass=compact" constant="50"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                             </constraint>
+                            <constraint firstItem="ZKl-wf-zqk" firstAttribute="top" secondItem="E2d-IP-jSn" secondAttribute="bottom" constant="30" id="CpK-KS-dgx"/>
                             <constraint firstItem="Zn0-dj-MDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GLp-2W-9Bn">
                                 <variation key="heightClass=compact-widthClass=compact" constant="-32"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="-32"/>
                             </constraint>
                             <constraint firstAttribute="bottom" secondItem="RkC-tA-Ujp" secondAttribute="bottom" constant="34" id="IAN-Ik-Sax"/>
-                            <constraint firstItem="lmh-RE-iMA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cXr-2n-lk8"/>
+                            <constraint firstItem="E2d-IP-jSn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MTy-PV-7hl"/>
+                            <constraint firstItem="lmh-RE-iMA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cXr-2n-lk8"/>
                             <constraint firstItem="ZKl-wf-zqk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eFu-gh-XdZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E2d-IP-jSn" secondAttribute="trailing" constant="16" id="kJa-bf-dKS"/>
                             <constraint firstAttribute="trailing" secondItem="Zn0-dj-MDg" secondAttribute="trailing" constant="20" id="kO5-eZ-4Jg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lmh-RE-iMA" secondAttribute="trailing" id="p0t-RL-0Vx"/>
+                            <constraint firstAttribute="trailing" secondItem="lmh-RE-iMA" secondAttribute="trailing" id="p0t-RL-0Vx"/>
                             <constraint firstItem="lmh-RE-iMA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rR2-b3-NCl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZKl-wf-zqk" secondAttribute="trailing" constant="16" id="uZ3-3J-ckg"/>
                         </constraints>
@@ -89,6 +100,7 @@
                         <outlet property="backgroundImage" destination="lmh-RE-iMA" id="ooA-rF-Hy9"/>
                         <outlet property="freePhotoLabel" destination="RkC-tA-Ujp" id="t6o-2H-yZh"/>
                         <outlet property="searchButton" destination="ZKl-wf-zqk" id="NhD-ax-gV6"/>
+                        <outlet property="searchTextField" destination="E2d-IP-jSn" id="BMD-tG-rX4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
