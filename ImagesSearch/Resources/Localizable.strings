@@ -5,3 +5,11 @@
   Created by Roman Ivanov on 22.11.2022.
   
 */
+
+"all" = "All";
+"photo" = "Photo";
+"illustration" = "Illustration";
+"vector" = "Vector";
+"search" = "Search";
+"free_photos" = "Photo by Free-Photos";
+"textfield_placeholder" = "Search images, vectors and more";
