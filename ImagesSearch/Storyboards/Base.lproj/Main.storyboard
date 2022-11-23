@@ -16,6 +16,9 @@
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
         </array>
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -41,24 +44,51 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKl-wf-zqk" customClass="SearchButton" customModule="ImagesSearch" customModuleProvider="target">
+                                <rect key="frame" x="16" y="496" width="358" height="52"/>
+                                <color key="backgroundColor" name="violetColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="3k5-An-CdV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="13" maxY="0.0"/>
+                                <state key="normal" title="Search" image="search"/>
+                                <connections>
+                                    <action selector="searchAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xJq-HR-jMU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RkC-tA-Ujp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0YA-8p-M1P"/>
+                            <constraint firstItem="RkC-tA-Ujp" firstAttribute="top" secondItem="ZKl-wf-zqk" secondAttribute="bottom" constant="245" id="7bL-3w-eHZ">
+                                <variation key="heightClass=compact-widthClass=compact" constant="30"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="30"/>
+                            </constraint>
                             <constraint firstAttribute="bottom" secondItem="lmh-RE-iMA" secondAttribute="bottom" id="AoB-m3-Pe7"/>
-                            <constraint firstItem="Zn0-dj-MDg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="193" id="BEg-0c-ora"/>
-                            <constraint firstItem="Zn0-dj-MDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GLp-2W-9Bn"/>
+                            <constraint firstItem="Zn0-dj-MDg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="193" id="BEg-0c-ora">
+                                <variation key="heightClass=compact-widthClass=compact" constant="50"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="Zn0-dj-MDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GLp-2W-9Bn">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-32"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="-32"/>
+                            </constraint>
                             <constraint firstAttribute="bottom" secondItem="RkC-tA-Ujp" secondAttribute="bottom" constant="34" id="IAN-Ik-Sax"/>
                             <constraint firstItem="lmh-RE-iMA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cXr-2n-lk8"/>
+                            <constraint firstItem="ZKl-wf-zqk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eFu-gh-XdZ"/>
                             <constraint firstAttribute="trailing" secondItem="Zn0-dj-MDg" secondAttribute="trailing" constant="20" id="kO5-eZ-4Jg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lmh-RE-iMA" secondAttribute="trailing" id="p0t-RL-0Vx"/>
                             <constraint firstItem="lmh-RE-iMA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rR2-b3-NCl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZKl-wf-zqk" secondAttribute="trailing" constant="16" id="uZ3-3J-ckg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IKa-J7-5cX"/>
                     <connections>
                         <outlet property="backgroundImage" destination="lmh-RE-iMA" id="ooA-rF-Hy9"/>
+                        <outlet property="freePhotoLabel" destination="RkC-tA-Ujp" id="t6o-2H-yZh"/>
+                        <outlet property="searchButton" destination="ZKl-wf-zqk" id="NhD-ax-gV6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,8 +116,12 @@
     </scenes>
     <resources>
         <image name="background_start_screen" width="375" height="812"/>
+        <image name="search" width="14" height="14"/>
         <namedColor name="lightGrayColor">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="violetColor">
+            <color red="0.2627450980392157" green="0.043137254901960784" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
