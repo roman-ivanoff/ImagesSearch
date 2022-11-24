@@ -32,6 +32,8 @@
 		FD9C7D25292E7884008BD1DF /* ImageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9C7D24292E7884008BD1DF /* ImageDetail.storyboard */; };
 		FD9C7D27292E78B3008BD1DF /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D26292E78B3008BD1DF /* ImagesListViewController.swift */; };
 		FD9C7D29292E78C0008BD1DF /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */; };
+		FDFC2818292F677100649E88 /* DropdownButtonWIthBorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */; };
+		FDFC281A292F69BB00649E88 /* DropdownButtonWIthBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		FD9C7D24292E7884008BD1DF /* ImageDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetail.storyboard; sourceTree = "<group>"; };
 		FD9C7D26292E78B3008BD1DF /* ImagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewController.swift; sourceTree = "<group>"; };
 		FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButtonWIthBorder.xib; sourceTree = "<group>"; };
+		FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonWIthBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +88,6 @@
 				41ECB0665AC71B2980DBD618 /* Pods-ImagesSearch.debug.xcconfig */,
 				15F72476196F01FF111B9CF0 /* Pods-ImagesSearch.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -196,6 +199,8 @@
 				FD9C7D0F292E7576008BD1DF /* DropdownButton.swift */,
 				FD9C7D13292E76D5008BD1DF /* SearchButton.swift */,
 				FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */,
+				FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */,
+				FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFC2818292F677100649E88 /* DropdownButtonWIthBorder.xib in Resources */,
 				FD340D5F292CC34900B40917 /* LaunchScreen.storyboard in Resources */,
 				FD340D6C292CC46600B40917 /* Localizable.strings in Resources */,
 				FD340D82292CC71500B40917 /* OpenSans-SemiBold.ttf in Resources */,
@@ -375,6 +381,7 @@
 				FD340D57292CC34700B40917 /* ViewController.swift in Sources */,
 				FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */,
 				FD340D53292CC34700B40917 /* AppDelegate.swift in Sources */,
+				FDFC281A292F69BB00649E88 /* DropdownButtonWIthBorder.swift in Sources */,
 				FD9C7D10292E7576008BD1DF /* DropdownButton.swift in Sources */,
 				FD9C7D29292E78C0008BD1DF /* ImageDetailViewController.swift in Sources */,
 				FD9C7D1A292E773E008BD1DF /* ServiceError.swift in Sources */,

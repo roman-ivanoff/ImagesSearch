@@ -36,9 +36,13 @@ class DropdownButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(named: "textFieldColor")
         setImage(UIImage(named: "arrow"), for: .normal)
-        alignmentImageRight()
+        semanticContentAttribute = .forceRightToLeft
+        backgroundColor = UIColor(named: "textFieldColor")
         tintColor = UIColor(named: "nightRiderColor")
         setTitleColor(UIColor(named: "nightRiderColor"), for: .normal)
         titleLabel?.font = UIFont(name: "OpenSans-Regular", size: 14)
+        titleLabel?.numberOfLines = 1
+        titleLabel?.lineBreakMode = .byTruncatingHead
+        imageEdgeInsets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 0)
     }
 }
