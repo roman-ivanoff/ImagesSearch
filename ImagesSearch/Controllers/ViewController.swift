@@ -17,8 +17,9 @@ class ViewController: UIViewController {
 
     // MARK: - Properties
     let dropDown = DropDown()
-    var dropDownButton: DropdownButton!
+    var dropdownButtonWIthBorder: DropdownButtonWIthBorder!
     let imageTypes: [ImageType] = [.all, .photo, .illustration, .vector]
+    var imageType = ImageType.photo.apiOption
 
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -55,18 +56,22 @@ class ViewController: UIViewController {
 
         freePhotoLabel.text = NSLocalizedString("free_photos", comment: "")
 
+        searchTextField.delegate = self
         searchTextField.placeholder = NSLocalizedString("textfield_placeholder", comment: "")
         searchTextField.rightView?.frame = searchTextField.rightViewRect(forBounds: searchTextField.bounds)
         setupDropdownButton()
-        searchTextField.rightView = dropDownButton
+        searchTextField.rightView = dropdownButtonWIthBorder
         searchTextField.rightViewMode = .always
     }
 
     private func setupDropdownButton() {
-        dropDownButton = DropdownButton(frame: CGRect(x: 0, y: 0, width: 50, height: searchTextField.frame.height))
-        dropDownButton.setTitle(imageTypes[1].name, for: .normal)
-        dropDownButton.drawBorder(edges: [.left], borderWidth: 1, color: UIColor(named: "lineGrayColor")!, margin: 0)
-        dropDownButton.addTarget(self, action: #selector(selectImageTypeAction(_:)), for: .touchUpInside)
+        dropdownButtonWIthBorder = DropdownButtonWIthBorder(frame: CGRect(x: 0, y: 0, width: 90, height: 52))
+        dropdownButtonWIthBorder.button.setTitle(imageTypes[1].name, for: .normal)
+        dropdownButtonWIthBorder.button.addTarget(
+            self,
+            action: #selector(selectImageTypeAction(_:)),
+            for: .touchUpInside
+        )
     }
 
     // MARK: - Actions
@@ -81,6 +86,7 @@ class ViewController: UIViewController {
             guard let self else {
                 return
             }
+            self.imageType = self.imageTypes[index].apiOption
             sender.isRotated.toggle()
             sender.setTitle(item, for: .normal)
         }
@@ -90,5 +96,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func searchAction(_ sender: Any) {
+        guard let searchQuery = searchTextField.text,
+              !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return
+        }
+
+        print("\(searchQuery), \(imageType)")
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

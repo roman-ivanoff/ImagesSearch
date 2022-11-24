@@ -21,7 +21,7 @@ class SearchTextField: UITextField {
     }
 
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: bounds.width - 100, y: 0, width: 90, height: bounds.height)
+        return CGRect(x: bounds.width - 100, y: 1, width: 90, height: bounds.height - 2)
     }
 
     private func setup() {
