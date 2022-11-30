@@ -11,7 +11,7 @@ enum ImageType: String, Codable {
     case all
     case photo
     case illustration
-    case vector
+    case vector = "vector/svg"
 
     var name: String {
         switch self {

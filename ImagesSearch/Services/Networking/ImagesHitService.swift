@@ -21,7 +21,6 @@ class ImagesHitService {
     }
 
     func getImages<T: Decodable>(
-        ofType: T.Type,
         searchTerm: String? = nil,
         imageId: String? = nil,
         imageType: ImageType? = nil,
@@ -45,13 +44,49 @@ class ImagesHitService {
             urlComponents.queryItems = queryItems
 
             guard let url = urlComponents.url else {
-                completion(.failure(.invalidUrl))
+                DispatchQueue.main.async {
+                    completion(.failure(.invalidUrl))
+                }
                 return
             }
-            print(url)
-        }
 
-        print("----------------------------")
+            dataTask = session.dataTask(with: url, completionHandler: { data, response, error in
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    DispatchQueue.main.async {
+                        completion(.failure(.invalidResponseStatus))
+                    }
+                    return
+                }
+
+                guard error == nil else {
+                    DispatchQueue.main.async {
+                        completion(.failure(.dataTaskError(error!.localizedDescription)))
+                    }
+                    return
+                }
+
+                guard let jsonData = data else {
+                    DispatchQueue.main.async {
+                        completion(.failure(.corruptData))
+                    }
+                    return
+                }
+
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = keyDecodingStrategy
+
+                do {
+                    let decodedData = try decoder.decode(T.self, from: jsonData)
+                    DispatchQueue.main.async {
+                        completion(.success(decodedData))
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        completion(.failure(.decodingError(error.localizedDescription)))
+                    }
+                }
+            })
+        }
 
         dataTask?.resume()
     }

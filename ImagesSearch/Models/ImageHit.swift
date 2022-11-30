@@ -27,7 +27,7 @@ struct ImageHit: Decodable {
     let collections: Int
     let likes: Int
     let comments: Int
-    let userID: Int
+    let userId: Int
     let user: String
     let userImageURL: String
 }

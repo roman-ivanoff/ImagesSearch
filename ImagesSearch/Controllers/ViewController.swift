@@ -21,9 +21,20 @@ class ViewController: UIViewController {
     let imageTypes: [ImageType] = [.all, .photo, .illustration, .vector]
     var imageType = ImageType.photo.apiOption
 
+    let imageHitService = ImagesHitService()
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        imageHitService.getImages(searchTerm: "yellow car") { (result: Result<PixabayImages, ServiceError>) in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
