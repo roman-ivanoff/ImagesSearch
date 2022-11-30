@@ -19,22 +19,16 @@ class ViewController: UIViewController {
     let dropDown = DropDown()
     var dropdownButtonWIthBorder: DropdownButtonWIthBorder!
     let imageTypes: [ImageType] = [.all, .photo, .illustration, .vector]
-    var imageType = ImageType.photo.apiOption
+//    var imageType = ImageType.photo.apiOption
+    var imageType = ImageType.photo
 
-    let imageHitService = ImagesHitService()
+    let imageModel = ImageListModel()
 
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageHitService.getImages(searchTerm: "yellow car") { (result: Result<PixabayImages, ServiceError>) in
-            switch result {
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        setupViews()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +89,8 @@ class ViewController: UIViewController {
             guard let self else {
                 return
             }
-            self.imageType = self.imageTypes[index].apiOption
+//            self.imageType = self.imageTypes[index].apiOption
+            self.imageType = self.imageTypes[index]
             sender.isRotated.toggle()
             sender.setTitle(item, for: .normal)
         }
@@ -111,6 +106,13 @@ class ViewController: UIViewController {
         }
 
         print("\(searchQuery), \(imageType)")
+
+        imageModel.getImages(searchTerm: searchQuery, imageType: imageType) { result in
+            print("////////////--------------------------------------")
+            print(result)
+        } onError: { error in
+            print(error)
+        }
     }
 }
 
