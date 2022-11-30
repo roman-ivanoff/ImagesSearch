@@ -20,6 +20,7 @@
 		FD340D82292CC71500B40917 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD340D7E292CC71500B40917 /* OpenSans-SemiBold.ttf */; };
 		FD340D83292CC71500B40917 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD340D7F292CC71500B40917 /* OpenSans-ExtraBold.ttf */; };
 		FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD340D84292CCF5900B40917 /* UIView+Overlay.swift */; };
+		FD5199342937BDB80008762A /* ImagesHitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5199332937BDB80008762A /* ImagesHitService.swift */; };
 		FD9C7D10292E7576008BD1DF /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D0F292E7576008BD1DF /* DropdownButton.swift */; };
 		FD9C7D12292E75AA008BD1DF /* UIButton+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D11292E75AA008BD1DF /* UIButton+Configuration.swift */; };
 		FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D13292E76D5008BD1DF /* SearchButton.swift */; };
@@ -54,6 +55,7 @@
 		FD340D7E292CC71500B40917 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		FD340D7F292CC71500B40917 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		FD340D84292CCF5900B40917 /* UIView+Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Overlay.swift"; sourceTree = "<group>"; };
+		FD5199332937BDB80008762A /* ImagesHitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesHitService.swift; sourceTree = "<group>"; };
 		FD9C7D0F292E7576008BD1DF /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		FD9C7D11292E75AA008BD1DF /* UIButton+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Configuration.swift"; sourceTree = "<group>"; };
 		FD9C7D13292E76D5008BD1DF /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				FD9C7D19292E773E008BD1DF /* ServiceError.swift */,
+				FD5199332937BDB80008762A /* ImagesHitService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				FD9C7D29292E78C0008BD1DF /* ImageDetailViewController.swift in Sources */,
 				FD9C7D1A292E773E008BD1DF /* ServiceError.swift in Sources */,
 				FD9C7D1D292E776F008BD1DF /* ImageType.swift in Sources */,
+				FD5199342937BDB80008762A /* ImagesHitService.swift in Sources */,
 				FD340D55292CC34700B40917 /* SceneDelegate.swift in Sources */,
 				FD9C7D16292E76F8008BD1DF /* SearchTextField.swift in Sources */,
 			);

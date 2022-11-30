@@ -24,8 +24,6 @@ class ViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupViews()
     }
 
     override func viewWillAppear(_ animated: Bool) {

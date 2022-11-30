@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PixabayImages {
+struct PixabayImages: Decodable {
     let total: Int
     let totalHits: Int
     let hits: [ImageHit]

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageHit {
+struct ImageHit: Decodable {
     let id: Int
     let pageURL: String
     let type: ImageType
