@@ -13,3 +13,6 @@
 "search" = "Search";
 "free_photos" = "Photo by Free-Photos";
 "textfield_placeholder" = "Search images, vectors and more";
+"ok" = "ok";
+"error" = "Error";
+"error_message" = "Please, enter search term";

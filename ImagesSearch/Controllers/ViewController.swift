@@ -8,6 +8,7 @@
 import UIKit
 import DropDown
 
+// swiftlint:disable: force_cast
 class ViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var searchButton: SearchButton!
@@ -77,6 +78,17 @@ class ViewController: UIViewController {
         )
     }
 
+    private func showErrorAlert(title: String, message: String) {
+        let dialogMessage = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel)
+        dialogMessage.addAction(okAction)
+        present(dialogMessage, animated: true)
+    }
+
     // MARK: - Actions
     @objc func selectImageTypeAction(_ sender: DropdownButton) {
         sender.isRotated.toggle()
@@ -102,17 +114,28 @@ class ViewController: UIViewController {
     @IBAction func searchAction(_ sender: Any) {
         guard let searchQuery = searchTextField.text,
               !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            showErrorAlert(
+                title: NSLocalizedString("error", comment: ""),
+                message: NSLocalizedString("error_message", comment: "")
+            )
             return
         }
 
-        print("\(searchQuery), \(imageType)")
+        let storyboard = UIStoryboard(name: "ImagesList", bundle: nil)
+        let imagesListVC = storyboard
+            .instantiateViewController(withIdentifier: "imagesList") as! ImagesListViewController
+        imagesListVC.searchQuery = searchQuery
+        imagesListVC.imageType = imageType
+        self.navigationController?.pushViewController(imagesListVC, animated: true)
 
-        imageModel.getImages(searchTerm: searchQuery, imageType: imageType) { result in
-            print("////////////--------------------------------------")
-            print(result)
-        } onError: { error in
-            print(error)
-        }
+//        print("\(searchQuery), \(imageType)")
+//
+//        imageModel.getImages(searchTerm: searchQuery, imageType: imageType) { result in
+//            print("////////////--------------------------------------")
+//            print(result)
+//        } onError: { error in
+//            print(error)
+//        }
     }
 }
 
