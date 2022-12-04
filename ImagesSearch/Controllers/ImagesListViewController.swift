@@ -9,6 +9,7 @@ import UIKit
 
 class ImagesListViewController: UIViewController {
     // MARK: - IBOutlets
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var imageCountLabel: UILabel!
     
     // MARK: - Properties

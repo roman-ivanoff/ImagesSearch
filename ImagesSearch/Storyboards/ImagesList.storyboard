@@ -28,18 +28,24 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Wqy-JR-d4n">
+                                <rect key="frame" x="185" y="412" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Wqy-JR-d4n" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1Av-fL-SIf"/>
                             <constraint firstItem="JWx-fc-kJC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="7" id="BWM-TZ-2GR"/>
                             <constraint firstItem="JWx-fc-kJC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CKN-C7-gKP"/>
+                            <constraint firstItem="Wqy-JR-d4n" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="VLD-Vq-W6J"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JWx-fc-kJC" secondAttribute="trailing" constant="16" id="m0f-dI-feX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o2S-CT-ray"/>
                     <connections>
                         <outlet property="imageCountLabel" destination="JWx-fc-kJC" id="YO6-JS-wKX"/>
+                        <outlet property="indicator" destination="Wqy-JR-d4n" id="bmt-0O-110"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
