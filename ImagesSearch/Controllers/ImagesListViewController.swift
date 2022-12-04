@@ -8,6 +8,10 @@
 import UIKit
 
 class ImagesListViewController: UIViewController {
+    // MARK: - IBOutlets
+    @IBOutlet weak var imageCountLabel: UILabel!
+    
+    // MARK: - Properties
     var searchQuery: String!
     var imageType: ImageType!
 
