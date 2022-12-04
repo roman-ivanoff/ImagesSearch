@@ -34,6 +34,8 @@
 		FD9C7D25292E7884008BD1DF /* ImageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9C7D24292E7884008BD1DF /* ImageDetail.storyboard */; };
 		FD9C7D27292E78B3008BD1DF /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D26292E78B3008BD1DF /* ImagesListViewController.swift */; };
 		FD9C7D29292E78C0008BD1DF /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */; };
+		FDB0B168293CC2DE0026D7AD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */; };
+		FDB0B169293CC2DE0026D7AD /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */; };
 		FDFC2818292F677100649E88 /* DropdownButtonWIthBorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */; };
 		FDFC281A292F69BB00649E88 /* DropdownButtonWIthBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		FD9C7D24292E7884008BD1DF /* ImageDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageDetail.storyboard; sourceTree = "<group>"; };
 		FD9C7D26292E78B3008BD1DF /* ImagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewController.swift; sourceTree = "<group>"; };
 		FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButtonWIthBorder.xib; sourceTree = "<group>"; };
 		FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonWIthBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -233,6 +237,8 @@
 				FD9C7D1E292E7793008BD1DF /* ImageHit.swift */,
 				FD9C7D20292E7831008BD1DF /* PixabayImages.swift */,
 				FD998AE6293818B40093E5DD /* ImageListModel.swift */,
+				FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */,
+				FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 				FD340D80292CC71500B40917 /* OpenSans-Bold.ttf in Resources */,
 				FD340D81292CC71500B40917 /* OpenSans-Regular.ttf in Resources */,
 				FD340D5A292CC34700B40917 /* Main.storyboard in Resources */,
+				FDB0B169293CC2DE0026D7AD /* ImageCollectionViewCell.xib in Resources */,
 				FD9C7D23292E7876008BD1DF /* ImagesList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +392,7 @@
 				FD9C7D21292E7831008BD1DF /* PixabayImages.swift in Sources */,
 				FD9C7D12292E75AA008BD1DF /* UIButton+Configuration.swift in Sources */,
 				FD340D57292CC34700B40917 /* ViewController.swift in Sources */,
+				FDB0B168293CC2DE0026D7AD /* ImageCollectionViewCell.swift in Sources */,
 				FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */,
 				FD998AE7293818B40093E5DD /* ImageListModel.swift in Sources */,
 				FD340D53292CC34700B40917 /* AppDelegate.swift in Sources */,
