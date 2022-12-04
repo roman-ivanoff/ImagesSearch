@@ -11,6 +11,7 @@ class ImagesListViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var imageCountLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     var searchQuery: String!

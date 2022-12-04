@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Hh-jM-CJJ">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="16" y="0.0" width="18" height="50"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                         </userDefinedRuntimeAttributes>
@@ -27,10 +27,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="8Hh-jM-CJJ" secondAttribute="trailing" constant="16" id="4jD-8Y-yez"/>
                 <constraint firstAttribute="bottom" secondItem="8Hh-jM-CJJ" secondAttribute="bottom" id="RxR-sB-0V3"/>
+                <constraint firstItem="8Hh-jM-CJJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="UPb-Fj-trU"/>
                 <constraint firstItem="8Hh-jM-CJJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="W8X-IV-FMN"/>
-                <constraint firstItem="8Hh-jM-CJJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kew-Mj-Wf8"/>
-                <constraint firstAttribute="trailing" secondItem="8Hh-jM-CJJ" secondAttribute="trailing" id="q3B-p0-oZ7"/>
             </constraints>
             <connections>
                 <outlet property="imageView" destination="8Hh-jM-CJJ" id="RgO-9c-T78"/>
