@@ -20,6 +20,9 @@ class ImagesListViewController: UIViewController {
     var imageType: ImageType!
     let imageModel = ImageListModel()
     let cellId = "imageCell"
+    private lazy var searchDelegateObject = SearchDelegate { [weak self] searchTerm in
+        self?.fetchNewImages(searchTerm: searchTerm)
+    }
 
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -54,15 +57,20 @@ class ImagesListViewController: UIViewController {
     }
 
     private func setNavBar() {
-        navigationController?.navigationBar.barTintColor = UIColor.red
-//        let height: CGFloat = 24
-//        let bounds = self.navigationController!.navigationBar.bounds
-//        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
-        let height: CGFloat = 50
-        print(self.navigationController!.navigationBar.bounds.height)
-        let bounds = self.navigationController!.navigationBar.bounds
-        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
-        print(self.navigationController!.navigationBar.bounds.height)
+        let textField = SearchTextField(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: (navigationController?.navigationBar.frame.size.width)!,
+            height: 52
+        ))
+        textField.backgroundColor = UIColor(named: "lightGrayColor")
+        textField.placeholder = NSLocalizedString("textfield_placeholder", comment: "")
+        textField.addTarget(
+            searchDelegateObject,
+            action: #selector(SearchDelegate.editingChanged(_:)),
+            for: .editingChanged
+        )
+        navigationItem.titleView = textField
 
         navigationItem.setHidesBackButton(true, animated: false)
 
@@ -79,12 +87,6 @@ class ImagesListViewController: UIViewController {
         settingsButton.layer.cornerRadius = 5
         settingsButton.setImage(UIImage(named: "settings"), for: .normal)
         let rightBarButtonItem = UIBarButtonItem(customView: settingsButton)
-//        rightBarButtonItem.customView?.translatesAutoresizingMaskIntoConstraints = false
-//        rightBarButtonItem.customView?.heightAnchor.constraint(equalToConstant: 52).isActive = true
-//        rightBarButtonItem.customView?.widthAnchor.constraint(equalToConstant: 52).isActive = true
-        navigationItem.rightBarButtonItem?.customView?.translatesAutoresizingMaskIntoConstraints = false
-        navigationItem.rightBarButtonItem?.customView?.heightAnchor.constraint(equalToConstant: 52).isActive = true
-        navigationItem.rightBarButtonItem?.customView?.widthAnchor.constraint(equalToConstant: 52).isActive = true
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
@@ -115,6 +117,29 @@ class ImagesListViewController: UIViewController {
         let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel)
         dialogMessage.addAction(okAction)
         present(dialogMessage, animated: true)
+    }
+
+    private func fetchNewImages(searchTerm: String) {
+        imageModel.images = []
+        imageModel.page = 1
+
+        hideViews()
+        indicator.startAnimating()
+
+        imageModel.getImages(
+            searchTerm: searchTerm,
+            imageType: .photo,
+            page: String(imageModel.page),
+            perPage: String(imageModel.perPage)
+        ) { [weak self] _ in
+            guard let self else {
+                return
+            }
+            self.reloadCollectionView()
+        } onError: { error in
+            self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
+        }
+
     }
 
     @objc func shareImage(_ sender: UIButton) {

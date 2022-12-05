@@ -36,6 +36,7 @@
 		FD9C7D29292E78C0008BD1DF /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */; };
 		FDB0B168293CC2DE0026D7AD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */; };
 		FDB0B169293CC2DE0026D7AD /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */; };
+		FDBB8371293E3597008AD521 /* SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB8370293E3597008AD521 /* SearchDelegate.swift */; };
 		FDFC2818292F677100649E88 /* DropdownButtonWIthBorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */; };
 		FDFC281A292F69BB00649E88 /* DropdownButtonWIthBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		FDBB8370293E3597008AD521 /* SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDelegate.swift; sourceTree = "<group>"; };
 		FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButtonWIthBorder.xib; sourceTree = "<group>"; };
 		FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonWIthBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 		FD340D51292CC34700B40917 /* ImagesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				FDBB836F293E3588008AD521 /* Delegates */,
 				FD9C7D1B292E775D008BD1DF /* Models */,
 				FD9C7D17292E7725008BD1DF /* Services */,
 				FD9C7D0E292E755D008BD1DF /* Custom Views */,
@@ -241,6 +244,14 @@
 				FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FDBB836F293E3588008AD521 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB8370293E3597008AD521 /* SearchDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDBB8371293E3597008AD521 /* SearchDelegate.swift in Sources */,
 				FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */,
 				FD9C7D27292E78B3008BD1DF /* ImagesListViewController.swift in Sources */,
 				FD9C7D1F292E7793008BD1DF /* ImageHit.swift in Sources */,
