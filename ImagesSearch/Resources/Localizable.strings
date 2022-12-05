@@ -16,3 +16,4 @@
 "ok" = "ok";
 "error" = "Error";
 "error_message" = "Please, enter search term";
+"cannot_load_images" = "Cannot load images";

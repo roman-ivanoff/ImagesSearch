@@ -81,8 +81,40 @@ class ImagesListViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegate
 extension ImagesListViewController: UICollectionViewDelegate {
-
+    func collectionView(
+        _ collectionView: UICollectionView,
+        willDisplay cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
+        if indexPath.item == imageModel.images.count - 1  && imageModel.canLoadImages() {
+            imageModel.page += 1
+            imageModel.getImages(
+                searchTerm: searchQuery,
+                imageType: imageType,
+                page: String(imageModel.page),
+                perPage: String(imageModel.perPage)
+            ) { [weak self] _ in
+                guard let self else {
+                    return
+                }
+                collectionView.performBatchUpdates {
+                    collectionView
+                        .insertItems(
+                            at: Array(
+                                self.imageModel.images.count - self.imageModel.perPage ..< self.imageModel.images.count
+                            ).map { IndexPath(item: $0, section: 0) }
+                        )
+                }
+            } onError: { _ in
+                self.showErrorAlert(
+                    title: NSLocalizedString("error", comment: ""),
+                    message: NSLocalizedString("cannot_load_images", comment: "")
+                )
+            }
+        }
+    }
 }
 
 extension ImagesListViewController: UICollectionViewDataSource {
