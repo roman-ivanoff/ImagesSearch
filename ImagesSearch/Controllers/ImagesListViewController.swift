@@ -29,13 +29,17 @@ class ImagesListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
 
-        imageModel.getImages(searchTerm: searchQuery, imageType: imageType) { [weak self] result in
+        imageModel.getImages(
+            searchTerm: searchQuery,
+            imageType: imageType,
+            page: String(imageModel.page),
+            perPage: String(imageModel.perPage)
+        ) { [weak self] _ in
             guard let self else {
                 return
             }
             self.imageCountLabel.text = "\(self.imageModel.hits) Free Images"
             self.reloadCollectionView()
-//            print(result)
         } onError: { error in
             self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
         }

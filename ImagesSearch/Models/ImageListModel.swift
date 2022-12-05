@@ -10,19 +10,23 @@ import Foundation
 class ImageListModel {
     var images: [ImageHit] = []
     var hits = 0
-    var page = 0
+    var page = 1
     let perPage = 20
     let imageHitService = ImagesHitService()
 
     func getImages(
         searchTerm: String,
         imageType: ImageType,
+        page: String,
+        perPage: String,
         onSucces: @escaping([ImageHit]) -> Void,
         onError: @escaping(ServiceError) -> Void
     ) {
         imageHitService.getImages(
             searchTerm: searchTerm,
-            imageType: imageType
+            imageType: imageType,
+            page: page,
+            perPage: perPage
         ) { [weak self] (result: Result<PixabayImages, ServiceError>) in
             guard let self else {
                 return
@@ -37,5 +41,9 @@ class ImageListModel {
                 onError(error)
             }
         }
+    }
+
+    func canLoadImages() -> Bool {
+        return  page * perPage <= hits
     }
 }

@@ -14,6 +14,8 @@ class ImagesHitService {
     let searchTermName = "q"
     let imageIdName = "id"
     let imageTypeName = "image_type"
+    let pageName = "page"
+    let perPageName = "per_page"
     var dataTask: URLSessionDataTask?
 
     init(session: URLSession = URLSession(configuration: .default)) {
@@ -24,6 +26,8 @@ class ImagesHitService {
         searchTerm: String? = nil,
         imageId: String? = nil,
         imageType: ImageType? = nil,
+        page: String? = nil,
+        perPage: String? = nil,
         keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .convertFromSnakeCase,
         completion: @escaping(Result<T, ServiceError>) -> Void
     ) {
@@ -39,6 +43,16 @@ class ImagesHitService {
             }
             if let imageType = imageType {
                 queryItems.append(URLQueryItem(name: imageTypeName, value: imageType.apiOption))
+            }
+            if let page = page, !page.isEmpty {
+                queryItems.append(URLQueryItem(name: pageName, value: page))
+            } else {
+                queryItems.append(URLQueryItem(name: pageName, value: "1"))
+            }
+            if let perPage = perPage, !perPage.isEmpty {
+                queryItems.append(URLQueryItem(name: perPageName, value: perPage))
+            } else {
+                queryItems.append(URLQueryItem(name: perPageName, value: "20"))
             }
 
             urlComponents.queryItems = queryItems
