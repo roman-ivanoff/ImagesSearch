@@ -135,6 +135,7 @@ class ImagesListViewController: UIViewController {
             guard let self else {
                 return
             }
+            self.searchQuery = searchTerm
             self.reloadCollectionView()
         } onError: { error in
             self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
