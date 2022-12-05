@@ -135,7 +135,7 @@ class ImagesListViewController: UIViewController {
             guard let self else {
                 return
             }
-            // 
+
             self.searchQuery = searchTerm
             self.reloadCollectionView()
         } onError: { error in

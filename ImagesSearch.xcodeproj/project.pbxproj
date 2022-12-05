@@ -37,6 +37,7 @@
 		FDB0B168293CC2DE0026D7AD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */; };
 		FDB0B169293CC2DE0026D7AD /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */; };
 		FDBB8371293E3597008AD521 /* SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB8370293E3597008AD521 /* SearchDelegate.swift */; };
+		FDBB8375293E4B54008AD521 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB8374293E4B54008AD521 /* ImageModel.swift */; };
 		FDFC2818292F677100649E88 /* DropdownButtonWIthBorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */; };
 		FDFC281A292F69BB00649E88 /* DropdownButtonWIthBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		FDBB8370293E3597008AD521 /* SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDelegate.swift; sourceTree = "<group>"; };
+		FDBB8374293E4B54008AD521 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButtonWIthBorder.xib; sourceTree = "<group>"; };
 		FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonWIthBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,6 +244,7 @@
 				FD998AE6293818B40093E5DD /* ImageListModel.swift */,
 				FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */,
 				FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */,
+				FDBB8374293E4B54008AD521 /* ImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */,
 				FD998AE7293818B40093E5DD /* ImageListModel.swift in Sources */,
 				FD340D53292CC34700B40917 /* AppDelegate.swift in Sources */,
+				FDBB8375293E4B54008AD521 /* ImageModel.swift in Sources */,
 				FDFC281A292F69BB00649E88 /* DropdownButtonWIthBorder.swift in Sources */,
 				FD9C7D10292E7576008BD1DF /* DropdownButton.swift in Sources */,
 				FD9C7D29292E78C0008BD1DF /* ImageDetailViewController.swift in Sources */,
