@@ -155,10 +155,27 @@ class ImagesListViewController: UIViewController {
     @objc func backToMain(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+
+    private func getRelatedImages(image: ImageHit, images: [ImageHit]) -> [ImageHit] {
+        let imagesWithoutImage = images.filter { $0.id != image.id}
+        return imagesWithoutImage.count < imageModel.perPage ?
+        imagesWithoutImage :
+        Array(imagesWithoutImage.prefix(imageModel.perPage))
+    }
 }
 
 // MARK: - UICollectionViewDelegate
 extension ImagesListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "ImageDetail", bundle: nil)
+        let imageDetailVC = storyboard
+            .instantiateViewController(withIdentifier: "imageDetail") as! ImageDetailViewController
+        let image = imageModel.images[indexPath.row]
+        imageDetailVC.id = String(image.id)
+        imageDetailVC.images = getRelatedImages(image: image, images: imageModel.images)
+        self.navigationController?.pushViewController(imageDetailVC, animated: true)
+    }
+    
     func collectionView(
         _ collectionView: UICollectionView,
         willDisplay cell: UICollectionViewCell,
