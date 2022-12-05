@@ -8,12 +8,13 @@
 import UIKit
 import Kingfisher
 
+// swiftlint:disable: force_cast
 class ImagesListViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var imageCountLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+
     // MARK: - Properties
     var searchQuery: String!
     var imageType: ImageType!
@@ -47,8 +48,44 @@ class ImagesListViewController: UIViewController {
 
     // MARK: - Custom Methods
     private func setupViews() {
+        setNavBar()
         hideViews()
         indicator.startAnimating()
+    }
+
+    private func setNavBar() {
+        navigationController?.navigationBar.barTintColor = UIColor.red
+//        let height: CGFloat = 24
+//        let bounds = self.navigationController!.navigationBar.bounds
+//        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
+        let height: CGFloat = 50
+        print(self.navigationController!.navigationBar.bounds.height)
+        let bounds = self.navigationController!.navigationBar.bounds
+        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
+        print(self.navigationController!.navigationBar.bounds.height)
+
+        navigationItem.setHidesBackButton(true, animated: false)
+
+        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 52, height: 52))
+        backButton.backgroundColor = UIColor(named: "violetColor")
+        backButton.setImage(UIImage(named: "p"), for: .normal)
+        backButton.addTarget(self, action: #selector(backToMain(_:)), for: .touchUpInside)
+        let leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+
+        let settingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 52, height: 52))
+        settingsButton.layer.borderColor = UIColor(named: "textFieldColor")?.cgColor
+        settingsButton.layer.borderWidth = 1
+        settingsButton.layer.cornerRadius = 5
+        settingsButton.setImage(UIImage(named: "settings"), for: .normal)
+        let rightBarButtonItem = UIBarButtonItem(customView: settingsButton)
+//        rightBarButtonItem.customView?.translatesAutoresizingMaskIntoConstraints = false
+//        rightBarButtonItem.customView?.heightAnchor.constraint(equalToConstant: 52).isActive = true
+//        rightBarButtonItem.customView?.widthAnchor.constraint(equalToConstant: 52).isActive = true
+        navigationItem.rightBarButtonItem?.customView?.translatesAutoresizingMaskIntoConstraints = false
+        navigationItem.rightBarButtonItem?.customView?.heightAnchor.constraint(equalToConstant: 52).isActive = true
+        navigationItem.rightBarButtonItem?.customView?.widthAnchor.constraint(equalToConstant: 52).isActive = true
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
     private func reloadCollectionView() {
@@ -78,6 +115,18 @@ class ImagesListViewController: UIViewController {
         let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel)
         dialogMessage.addAction(okAction)
         present(dialogMessage, animated: true)
+    }
+
+    @objc func shareImage(_ sender: UIButton) {
+        let cell = collectionView.cellForItem(at: IndexPath(row: sender.tag, section: 0)) as! ImageCollectionViewCell
+        let imageToShare = [cell.imageView.image]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+
+    @objc func backToMain(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -117,6 +166,7 @@ extension ImagesListViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension ImagesListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         imageModel.images.count
@@ -132,16 +182,34 @@ extension ImagesListViewController: UICollectionViewDataSource {
             withReuseIdentifier: cellId,
             for: indexPath
         ) as? ImageCollectionViewCell {
+            imageCell.shareButton.tag = indexPath.row
             let url = URL(string: imageModel.images[indexPath.row].webformatURL)!
+            let resource = ImageResource(downloadURL: url, cacheKey: imageModel.images[indexPath.row].webformatURL)
 
             imageCell.imageView.kf.indicatorType = .activity
-            imageCell.imageView.kf.setImage(with: url, options: [
-                .processor(RoundCornerImageProcessor(cornerRadius: 5)),
-                .processor(DownsamplingImageProcessor(size: imageCell.imageView.bounds.size)),
-                .transition(.fade(0.7)),
-                .cacheOriginalImage]
-            )
+            imageCell.imageView.kf.setImage(
+                with: resource,
+                options: [
+                    .processor(RoundCornerImageProcessor(cornerRadius: 5)),
+                    .processor(DownsamplingImageProcessor(size: imageCell.imageView.bounds.size)),
+                    .transition(.fade(0.7)),
+                    .cacheOriginalImage
+                ]
+            ) { result in
+                    switch result {
+                    case .success:
+                        imageCell.shareButton.isHidden = false
+                        imageCell.shareButton.addTarget(
+                            self,
+                            action: #selector(self.shareImage(_:)),
+                            for: .touchUpInside
+                        )
+                    case .failure:
+                        imageCell.shareButton.isHidden = true
+                    }
+                }
 
+            imageCell.imageView.contentMode = .scaleAspectFill
             cell = imageCell
         }
 
@@ -149,8 +217,23 @@ extension ImagesListViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension ImagesListViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 386, height: 217)
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        var size: CGSize
+        let height: CGFloat = 217
+        let orientation = UIApplication.shared.statusBarOrientation
+
+        if orientation == .landscapeLeft || orientation == .landscapeRight {
+            size = CGSize(width: (collectionView.frame.width - 20) / 2, height: height)
+        } else {
+            size = CGSize(width: collectionView.frame.width, height: height)
+        }
+
+        return size
     }
 }

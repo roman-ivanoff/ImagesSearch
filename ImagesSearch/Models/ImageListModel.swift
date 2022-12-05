@@ -34,7 +34,7 @@ class ImageListModel {
 
             switch result {
             case let .success(data):
-                self.images = data.hits
+                self.images.append(contentsOf: data.hits)
                 self.hits = data.total
                 onSucces(data.hits)
             case let .failure(error):
