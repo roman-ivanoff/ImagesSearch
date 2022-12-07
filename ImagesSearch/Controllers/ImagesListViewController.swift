@@ -161,6 +161,14 @@ class ImagesListViewController: UIViewController {
 
 // MARK: - UICollectionViewDelegate
 extension ImagesListViewController: UICollectionViewDelegate {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        flowLayout.invalidateLayout()
+    }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "ImageDetail", bundle: nil)
         let imageDetailVC = storyboard
