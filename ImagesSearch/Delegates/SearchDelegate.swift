@@ -9,6 +9,7 @@ import Foundation
 
 class SearchDelegate: NSObject {
     private let searchImages: (String) -> Void
+    private var workItem: DispatchWorkItem?
 
     init(searchImages: @escaping(String) -> Void) {
         self.searchImages = searchImages
@@ -16,6 +17,7 @@ class SearchDelegate: NSObject {
     }
 
     @objc func editingChanged(_ sender: SearchTextField) {
+        workItem?.cancel()
         let workItem = DispatchWorkItem { [self] in
             guard let text = sender.text else {
                 return
