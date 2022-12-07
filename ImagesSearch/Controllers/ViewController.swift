@@ -124,18 +124,9 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "ImagesList", bundle: nil)
         let imagesListVC = storyboard
             .instantiateViewController(withIdentifier: "imagesList") as! ImagesListViewController
-        imagesListVC.searchQuery = searchQuery
-        imagesListVC.imageType = imageType
+        imagesListVC.imageModel.searchTerm = searchQuery
+        imagesListVC.imageModel.imageType = imageType
         self.navigationController?.pushViewController(imagesListVC, animated: true)
-
-//        print("\(searchQuery), \(imageType)")
-//
-//        imageModel.getImages(searchTerm: searchQuery, imageType: imageType) { result in
-//            print("////////////--------------------------------------")
-//            print(result)
-//        } onError: { error in
-//            print(error)
-//        }
     }
 }
 

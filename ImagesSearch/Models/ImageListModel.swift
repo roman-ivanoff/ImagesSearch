@@ -13,6 +13,8 @@ class ImageListModel {
     var page = 1
     let perPage = 20
     let imageHitService = ImagesHitService()
+    var searchTerm = ""
+    var imageType: ImageType = .photo
 
     func getImages(
         searchTerm: String,
@@ -45,5 +47,12 @@ class ImageListModel {
 
     func canLoadImages() -> Bool {
         return  page * perPage <= hits
+    }
+
+    func getRelatedImages(image: ImageHit, images: [ImageHit]) -> [ImageHit] {
+        let imagesWithoutImage = images.filter { $0.id != image.id}
+        return imagesWithoutImage.count < perPage ?
+        imagesWithoutImage :
+        Array(imagesWithoutImage.prefix(perPage))
     }
 }

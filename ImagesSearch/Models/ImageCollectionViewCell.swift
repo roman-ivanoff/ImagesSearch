@@ -9,11 +9,11 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    static let nib = UINib(nibName: "ImageCollectionViewCell", bundle: nil)
     
     @IBOutlet weak var shareButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

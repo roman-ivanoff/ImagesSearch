@@ -16,8 +16,6 @@ class ImagesListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     // MARK: - Properties
-    var searchQuery: String!
-    var imageType: ImageType!
     let imageModel = ImageListModel()
     let cellId = "imageCell"
     private lazy var searchDelegateObject = SearchDelegate { [weak self] searchTerm in
@@ -29,24 +27,11 @@ class ImagesListViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
-        registerCell(collectionView, "ImageCollectionViewCell", id: cellId)
+        registerCell(collectionView, id: cellId)
         collectionView.delegate = self
         collectionView.dataSource = self
 
-        imageModel.getImages(
-            searchTerm: searchQuery,
-            imageType: imageType,
-            page: String(imageModel.page),
-            perPage: String(imageModel.perPage)
-        ) { [weak self] _ in
-            guard let self else {
-                return
-            }
-            self.imageCountLabel.text = "\(self.imageModel.hits) Free Images"
-            self.reloadCollectionView()
-        } onError: { error in
-            self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
-        }
+        fetchImages()
     }
 
     // MARK: - Custom Methods
@@ -90,6 +75,23 @@ class ImagesListViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
+    private func fetchImages() {
+        imageModel.getImages(
+            searchTerm: imageModel.searchTerm,
+            imageType: imageModel.imageType,
+            page: String(imageModel.page),
+            perPage: String(imageModel.perPage)
+        ) { [weak self] _ in
+            guard let self else {
+                return
+            }
+            self.imageCountLabel.text = "\(self.imageModel.hits) Free Images"
+            self.reloadCollectionView()
+        } onError: { error in
+            self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
+        }
+    }
+
     private func reloadCollectionView() {
         indicator.stopAnimating()
         collectionView.reloadData()
@@ -104,8 +106,8 @@ class ImagesListViewController: UIViewController {
         collectionView.isHidden = false
     }
 
-    private func registerCell(_ collectionView: UICollectionView, _ nibName: String, id: String) {
-        collectionView.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier: id)
+    private func registerCell(_ collectionView: UICollectionView, id: String) {
+        collectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: id)
     }
 
     private func showErrorAlert(title: String, message: String) {
@@ -136,7 +138,7 @@ class ImagesListViewController: UIViewController {
                 return
             }
 
-            self.searchQuery = searchTerm
+            self.imageModel.searchTerm = searchTerm
             self.reloadCollectionView()
         } onError: { error in
             self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
@@ -155,13 +157,6 @@ class ImagesListViewController: UIViewController {
     @objc func backToMain(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-
-    private func getRelatedImages(image: ImageHit, images: [ImageHit]) -> [ImageHit] {
-        let imagesWithoutImage = images.filter { $0.id != image.id}
-        return imagesWithoutImage.count < imageModel.perPage ?
-        imagesWithoutImage :
-        Array(imagesWithoutImage.prefix(imageModel.perPage))
-    }
 }
 
 // MARK: - UICollectionViewDelegate
@@ -172,10 +167,10 @@ extension ImagesListViewController: UICollectionViewDelegate {
             .instantiateViewController(withIdentifier: "imageDetail") as! ImageDetailViewController
         let image = imageModel.images[indexPath.row]
         imageDetailVC.id = String(image.id)
-        imageDetailVC.images = getRelatedImages(image: image, images: imageModel.images)
+        imageDetailVC.images = imageModel.getRelatedImages(image: image, images: imageModel.images)
         self.navigationController?.pushViewController(imageDetailVC, animated: true)
     }
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
         willDisplay cell: UICollectionViewCell,
@@ -184,8 +179,8 @@ extension ImagesListViewController: UICollectionViewDelegate {
         if indexPath.item == imageModel.images.count - 1  && imageModel.canLoadImages() {
             imageModel.page += 1
             imageModel.getImages(
-                searchTerm: searchQuery,
-                imageType: imageType,
+                searchTerm: imageModel.searchTerm,
+                imageType: imageModel.imageType,
                 page: String(imageModel.page),
                 perPage: String(imageModel.perPage)
             ) { [weak self] _ in
@@ -226,6 +221,7 @@ extension ImagesListViewController: UICollectionViewDataSource {
             withReuseIdentifier: cellId,
             for: indexPath
         ) as? ImageCollectionViewCell {
+            imageCell.shareButton.isHidden = true
             imageCell.shareButton.tag = indexPath.row
             let url = URL(string: imageModel.images[indexPath.row].webformatURL)!
             let resource = ImageResource(downloadURL: url, cacheKey: imageModel.images[indexPath.row].webformatURL)
