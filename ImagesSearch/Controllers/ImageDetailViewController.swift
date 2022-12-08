@@ -9,6 +9,7 @@ import UIKit
 
 class ImageDetailViewController: UIViewController {
     @IBOutlet weak var detailImage: UIImageView!
+    @IBOutlet weak var zoomButton: UIButton!
     let imageModel = ImageModel()
     let cellId = "imageCell"
 
@@ -16,5 +17,8 @@ class ImageDetailViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .red
+    }
+    
+    @IBAction func zoomImageAction(_ sender: UIButton) {
     }
 }

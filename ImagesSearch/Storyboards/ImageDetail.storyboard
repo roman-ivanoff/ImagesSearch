@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,18 +24,37 @@
                                     <constraint firstAttribute="height" constant="220" id="3cM-O8-gJG"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJN-TM-XQw">
+                                <rect key="frame" x="330" y="251" width="44" height="44"/>
+                                <color key="backgroundColor" name="textFieldColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7dj-cQ-q1J"/>
+                                    <constraint firstAttribute="width" constant="44" id="EzL-ZF-epj"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="magnifier"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="zoomImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6yU-go-Pvm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fIm-2b-xLd" firstAttribute="bottom" secondItem="jJN-TM-XQw" secondAttribute="bottom" constant="16" id="8Zc-Qa-jRX"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LZ5-dj-ZQV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fIm-2b-xLd" secondAttribute="trailing" id="VWU-3z-gNf"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cX5-Ox-oi7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jJN-TM-XQw" secondAttribute="trailing" constant="16" id="iT6-c6-Wx4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zax-6p-Dgs"/>
                     <connections>
                         <outlet property="detailImage" destination="fIm-2b-xLd" id="TDt-ez-YXC"/>
+                        <outlet property="zoomButton" destination="jJN-TM-XQw" id="3yi-dn-tcK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -61,6 +81,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="magnifier" width="19" height="19"/>
+        <namedColor name="textFieldColor">
+            <color red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
