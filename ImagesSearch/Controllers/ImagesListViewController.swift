@@ -232,32 +232,12 @@ extension ImagesListViewController: UICollectionViewDataSource {
             imageCell.shareButton.isHidden = true
             imageCell.shareButton.tag = indexPath.row
             let url = URL(string: imageModel.images[indexPath.row].webformatURL)!
-            let resource = ImageResource(downloadURL: url, cacheKey: imageModel.images[indexPath.row].webformatURL)
-
-            imageCell.imageView.kf.indicatorType = .activity
-            imageCell.imageView.kf.setImage(
-                with: resource,
-                options: [
-                    .processor(RoundCornerImageProcessor(cornerRadius: 5)),
-                    .processor(DownsamplingImageProcessor(size: imageCell.imageView.bounds.size)),
-                    .transition(.fade(0.7)),
-                    .cacheOriginalImage
-                ]
-            ) { result in
-                    switch result {
-                    case .success:
-                        imageCell.shareButton.isHidden = false
-                        imageCell.shareButton.addTarget(
-                            self,
-                            action: #selector(self.shareImage(_:)),
-                            for: .touchUpInside
-                        )
-                    case .failure:
-                        imageCell.shareButton.isHidden = true
-                    }
-                }
-
-            imageCell.imageView.contentMode = .scaleAspectFill
+            imageCell.configureCell(url: url, isHideButton: false)
+            imageCell.shareButton.addTarget(
+                self,
+                action: #selector(self.shareImage(_:)),
+                for: .touchUpInside
+            )
             cell = imageCell
         }
 
