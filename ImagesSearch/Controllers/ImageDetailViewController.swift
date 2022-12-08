@@ -9,6 +9,7 @@ import UIKit
 
 class ImageDetailViewController: UIViewController {
     @IBOutlet weak var shareButton: ShareButton!
+    @IBOutlet weak var downloadButton: SearchButton!
     @IBOutlet weak var apiLicenseLabel: UILabel!
     @IBOutlet weak var noAttributionLabel: UILabel!
     @IBOutlet weak var detailImage: UIImageView!
@@ -27,6 +28,8 @@ class ImageDetailViewController: UIViewController {
     @IBAction func zoomImageAction(_ sender: UIButton) {
     }
     
+    @IBAction func downloadImageAction(_ sender: SearchButton) {
+    }
     @IBAction func shareImageAction(_ sender: ShareButton) {
     }
 }

@@ -83,6 +83,20 @@
                                     <action selector="shareImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TjL-nf-Yc0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlX-2M-6Db" customClass="SearchButton" customModule="ImagesSearch" customModuleProvider="target">
+                                <rect key="frame" x="16" y="423" width="358" height="52"/>
+                                <color key="backgroundColor" name="violetColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Geo-7v-tbX"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="14" maxY="0.0"/>
+                                <state key="normal" title="Download" image="download">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EUV-6Q-kMP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -91,6 +105,8 @@
                             <constraint firstItem="qul-yO-KCe" firstAttribute="top" secondItem="fIm-2b-xLd" secondAttribute="bottom" constant="18" id="7XX-5q-FyT"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="bottom" secondItem="jJN-TM-XQw" secondAttribute="bottom" constant="16" id="8Zc-Qa-jRX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CTw-co-oax" secondAttribute="trailing" constant="16" id="A8i-fS-WGN"/>
+                            <constraint firstItem="mlX-2M-6Db" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="EAa-2S-7Gx"/>
+                            <constraint firstItem="mlX-2M-6Db" firstAttribute="top" secondItem="3WQ-Bs-kdI" secondAttribute="bottom" constant="24" id="G1I-V7-DYX"/>
                             <constraint firstItem="IjD-uk-HUu" firstAttribute="top" secondItem="bBh-LF-JHv" secondAttribute="bottom" constant="6" id="J1s-O4-YuR"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LZ5-dj-ZQV"/>
                             <constraint firstItem="IjD-uk-HUu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Mio-g9-AL0"/>
@@ -98,6 +114,7 @@
                             <constraint firstItem="3WQ-Bs-kdI" firstAttribute="top" secondItem="IjD-uk-HUu" secondAttribute="bottom" constant="6" id="Sb6-ti-Amc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fIm-2b-xLd" secondAttribute="trailing" id="VWU-3z-gNf"/>
                             <constraint firstItem="3WQ-Bs-kdI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Vit-cp-rbt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mlX-2M-6Db" secondAttribute="trailing" constant="16" id="W5k-gv-xnQ"/>
                             <constraint firstItem="qul-yO-KCe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Xfy-Fb-FXi"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cX5-Ox-oi7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jJN-TM-XQw" secondAttribute="trailing" constant="16" id="iT6-c6-Wx4"/>
@@ -108,6 +125,7 @@
                     <connections>
                         <outlet property="apiLicenseLabel" destination="qul-yO-KCe" id="vyN-lN-pb6"/>
                         <outlet property="detailImage" destination="fIm-2b-xLd" id="TDt-ez-YXC"/>
+                        <outlet property="downloadButton" destination="mlX-2M-6Db" id="Pak-Qn-Oau"/>
                         <outlet property="freeLabel" destination="IjD-uk-HUu" id="g1k-ae-Rvc"/>
                         <outlet property="imageFormatLabel" destination="bBh-LF-JHv" id="66L-rR-6dv"/>
                         <outlet property="noAttributionLabel" destination="3WQ-Bs-kdI" id="ri2-nK-RoC"/>
@@ -139,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="download" width="14" height="16"/>
         <image name="magnifier" width="19" height="19"/>
         <image name="share" width="14" height="16"/>
         <namedColor name="blueColor">
@@ -152,6 +171,9 @@
         </namedColor>
         <namedColor name="textFieldFontColor">
             <color red="0.45490196078431372" green="0.45490196078431372" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="violetColor">
+            <color red="0.2627450980392157" green="0.043137254901960784" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
