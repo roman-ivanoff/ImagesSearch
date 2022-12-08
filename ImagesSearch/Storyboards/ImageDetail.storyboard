@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -97,11 +98,35 @@
                                     <action selector="downloadImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EUV-6Q-kMP"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pus-Uh-hxk">
+                                <rect key="frame" x="0.0" y="499" width="390" height="345"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wAA-6d-jvE">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oY6-1v-fCC">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6IJ-W8-Muo">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="PRC-20-uo0">
+                                <rect key="frame" x="185" y="412" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bBh-LF-JHv" secondAttribute="trailing" constant="16" id="2KY-B2-Kxc"/>
+                            <constraint firstItem="pus-Uh-hxk" firstAttribute="top" secondItem="mlX-2M-6Db" secondAttribute="bottom" constant="24" id="4s5-1a-BIp"/>
                             <constraint firstItem="qul-yO-KCe" firstAttribute="top" secondItem="fIm-2b-xLd" secondAttribute="bottom" constant="18" id="7XX-5q-FyT"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="bottom" secondItem="jJN-TM-XQw" secondAttribute="bottom" constant="16" id="8Zc-Qa-jRX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CTw-co-oax" secondAttribute="trailing" constant="16" id="A8i-fS-WGN"/>
@@ -110,15 +135,20 @@
                             <constraint firstItem="IjD-uk-HUu" firstAttribute="top" secondItem="bBh-LF-JHv" secondAttribute="bottom" constant="6" id="J1s-O4-YuR"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LZ5-dj-ZQV"/>
                             <constraint firstItem="IjD-uk-HUu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Mio-g9-AL0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pus-Uh-hxk" secondAttribute="trailing" id="NNA-i1-Qvr"/>
                             <constraint firstItem="CTw-co-oax" firstAttribute="bottom" secondItem="3WQ-Bs-kdI" secondAttribute="bottom" constant="8" id="QCP-bZ-bFH"/>
                             <constraint firstItem="3WQ-Bs-kdI" firstAttribute="top" secondItem="IjD-uk-HUu" secondAttribute="bottom" constant="6" id="Sb6-ti-Amc"/>
+                            <constraint firstItem="PRC-20-uo0" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="VAd-Ro-El8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fIm-2b-xLd" secondAttribute="trailing" id="VWU-3z-gNf"/>
                             <constraint firstItem="3WQ-Bs-kdI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Vit-cp-rbt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mlX-2M-6Db" secondAttribute="trailing" constant="16" id="W5k-gv-xnQ"/>
                             <constraint firstItem="qul-yO-KCe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Xfy-Fb-FXi"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cX5-Ox-oi7"/>
+                            <constraint firstItem="PRC-20-uo0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eX5-ak-0IY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jJN-TM-XQw" secondAttribute="trailing" constant="16" id="iT6-c6-Wx4"/>
+                            <constraint firstItem="pus-Uh-hxk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jFg-87-6Pv"/>
                             <constraint firstItem="bBh-LF-JHv" firstAttribute="top" secondItem="fIm-2b-xLd" secondAttribute="bottom" constant="18" id="lxm-dY-Ksa"/>
+                            <constraint firstAttribute="bottom" secondItem="pus-Uh-hxk" secondAttribute="bottom" id="o6q-03-heA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zax-6p-Dgs"/>
@@ -128,7 +158,9 @@
                         <outlet property="downloadButton" destination="mlX-2M-6Db" id="Pak-Qn-Oau"/>
                         <outlet property="freeLabel" destination="IjD-uk-HUu" id="g1k-ae-Rvc"/>
                         <outlet property="imageFormatLabel" destination="bBh-LF-JHv" id="66L-rR-6dv"/>
+                        <outlet property="indicator" destination="PRC-20-uo0" id="ip2-9m-LFB"/>
                         <outlet property="noAttributionLabel" destination="3WQ-Bs-kdI" id="ri2-nK-RoC"/>
+                        <outlet property="relatedCollectionView" destination="pus-Uh-hxk" id="Tdh-E9-f11"/>
                         <outlet property="shareButton" destination="CTw-co-oax" id="u0k-HL-dLK"/>
                         <outlet property="zoomButton" destination="jJN-TM-XQw" id="3yi-dn-tcK"/>
                     </connections>
