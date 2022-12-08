@@ -30,7 +30,8 @@ class ImageDetailViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
-        registerCell(relatedCollectionView, id: cellId)
+//        registerCell(relatedCollectionView, id: cellId)
+        relatedCollectionView.registerCustomCell(ImageCollectionViewCell.self)
         relatedCollectionView.delegate = self
         relatedCollectionView.dataSource = self
         relatedCollectionView.register(UINib(nibName: "HeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
@@ -105,9 +106,9 @@ class ImageDetailViewController: UIViewController {
         showHiddenViews()
     }
 
-    private func registerCell(_ collectionView: UICollectionView, id: String) {
-        collectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: id)
-    }
+//    private func registerCell(_ collectionView: UICollectionView, id: String) {
+//        collectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: id)
+//    }
 
     private func showErrorAlert(title: String, message: String) {
         let dialogMessage = UIAlertController(
@@ -123,7 +124,7 @@ class ImageDetailViewController: UIViewController {
     // MARK: - Actions
     @IBAction func zoomImageAction(_ sender: UIButton) {
     }
-    
+
     @IBAction func downloadImageAction(_ sender: SearchButton) {
     }
 
@@ -151,7 +152,7 @@ extension ImageDetailViewController: UICollectionViewDataSource {
         var cell = UICollectionViewCell()
 
         if let imageCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: cellId,
+            withReuseIdentifier: ImageCollectionViewCell.identifier,
             for: indexPath
         ) as? ImageCollectionViewCell {
             imageCell.shareButton.isHidden = true

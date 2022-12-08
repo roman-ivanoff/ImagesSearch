@@ -27,7 +27,8 @@ class ImagesListViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
-        registerCell(collectionView, id: cellId)
+//        registerCell(collectionView, id: cellId)
+        collectionView.registerCustomCell(ImageCollectionViewCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
 
@@ -106,9 +107,9 @@ class ImagesListViewController: UIViewController {
         collectionView.isHidden = false
     }
 
-    private func registerCell(_ collectionView: UICollectionView, id: String) {
-        collectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: id)
-    }
+//    private func registerCell(_ collectionView: UICollectionView, id: String) {
+//        collectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: id)
+//    }
 
     private func showErrorAlert(title: String, message: String) {
         let dialogMessage = UIAlertController(
@@ -226,7 +227,7 @@ extension ImagesListViewController: UICollectionViewDataSource {
         var cell = UICollectionViewCell()
 
         if let imageCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: cellId,
+            withReuseIdentifier: ImageCollectionViewCell.identifier,
             for: indexPath
         ) as? ImageCollectionViewCell {
             imageCell.shareButton.isHidden = true

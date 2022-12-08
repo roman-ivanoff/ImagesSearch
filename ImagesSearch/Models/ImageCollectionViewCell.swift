@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ImageCollectionViewCell: UICollectionViewCell {
+class ImageCollectionViewCell: UICollectionViewCell, SMIdentifiable {
     @IBOutlet weak var imageView: UIImageView!
     static let nib = UINib(nibName: "ImageCollectionViewCell", bundle: nil)
     @IBOutlet weak var shareButton: UIButton!
