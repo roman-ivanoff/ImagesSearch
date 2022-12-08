@@ -8,6 +8,7 @@
 import UIKit
 
 class ImageDetailViewController: UIViewController {
+    @IBOutlet weak var detailImage: UIImageView!
     let imageModel = ImageModel()
     let cellId = "imageCell"
 

@@ -16,10 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fIm-2b-xLd">
+                                <rect key="frame" x="0.0" y="91" width="390" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="3cM-O8-gJG"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fIm-2b-xLd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LZ5-dj-ZQV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fIm-2b-xLd" secondAttribute="trailing" id="VWU-3z-gNf"/>
+                            <constraint firstItem="fIm-2b-xLd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cX5-Ox-oi7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zax-6p-Dgs"/>
+                    <connections>
+                        <outlet property="detailImage" destination="fIm-2b-xLd" id="TDt-ez-YXC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

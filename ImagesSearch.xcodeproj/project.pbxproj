@@ -38,6 +38,7 @@
 		FDB0B169293CC2DE0026D7AD /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */; };
 		FDBB8371293E3597008AD521 /* SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB8370293E3597008AD521 /* SearchDelegate.swift */; };
 		FDBB8375293E4B54008AD521 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB8374293E4B54008AD521 /* ImageModel.swift */; };
+		FDDF09C32942338D00E4C93D /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF09C22942338D00E4C93D /* ShareButton.swift */; };
 		FDFC2818292F677100649E88 /* DropdownButtonWIthBorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */; };
 		FDFC281A292F69BB00649E88 /* DropdownButtonWIthBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		FDBB8370293E3597008AD521 /* SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDelegate.swift; sourceTree = "<group>"; };
 		FDBB8374293E4B54008AD521 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		FDDF09C22942338D00E4C93D /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButtonWIthBorder.xib; sourceTree = "<group>"; };
 		FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonWIthBorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +216,7 @@
 				FD9C7D15292E76F8008BD1DF /* SearchTextField.swift */,
 				FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */,
 				FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */,
+				FDDF09C22942338D00E4C93D /* ShareButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDDF09C32942338D00E4C93D /* ShareButton.swift in Sources */,
 				FDBB8371293E3597008AD521 /* SearchDelegate.swift in Sources */,
 				FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */,
 				FD9C7D27292E78B3008BD1DF /* ImagesListViewController.swift in Sources */,
