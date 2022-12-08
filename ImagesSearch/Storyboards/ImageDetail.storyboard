@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Image Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -40,20 +45,73 @@
                                     <action selector="zoomImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6yU-go-Pvm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Licencse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qul-yO-KCe">
+                                <rect key="frame" x="16" y="329" width="80.333333333333329" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                                <color key="textColor" name="blueColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo in .JPG format" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBh-LF-JHv">
+                                <rect key="frame" x="241.33333333333337" y="329" width="132.66666666666663" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                                <color key="textColor" name="nightRiderColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free for commercial use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjD-uk-HUu">
+                                <rect key="frame" x="16" y="354.33333333333331" width="158" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                                <color key="textColor" name="textFieldFontColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No attribution required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WQ-Bs-kdI">
+                                <rect key="frame" x="16" y="379.66666666666669" width="152.66666666666666" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                                <color key="textColor" name="textFieldFontColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTw-co-oax" customClass="ShareButton" customModule="ImagesSearch" customModuleProvider="target">
+                                <rect key="frame" x="250" y="375" width="124" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="IHy-G5-LPe"/>
+                                    <constraint firstAttribute="width" constant="124" id="tLH-YY-Puq"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="9" maxY="0.0"/>
+                                <state key="normal" title="Share" image="share">
+                                    <color key="titleColor" name="nightRiderColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TjL-nf-Yc0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bBh-LF-JHv" secondAttribute="trailing" constant="16" id="2KY-B2-Kxc"/>
+                            <constraint firstItem="qul-yO-KCe" firstAttribute="top" secondItem="fIm-2b-xLd" secondAttribute="bottom" constant="18" id="7XX-5q-FyT"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="bottom" secondItem="jJN-TM-XQw" secondAttribute="bottom" constant="16" id="8Zc-Qa-jRX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CTw-co-oax" secondAttribute="trailing" constant="16" id="A8i-fS-WGN"/>
+                            <constraint firstItem="IjD-uk-HUu" firstAttribute="top" secondItem="bBh-LF-JHv" secondAttribute="bottom" constant="6" id="J1s-O4-YuR"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LZ5-dj-ZQV"/>
+                            <constraint firstItem="IjD-uk-HUu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Mio-g9-AL0"/>
+                            <constraint firstItem="CTw-co-oax" firstAttribute="bottom" secondItem="3WQ-Bs-kdI" secondAttribute="bottom" constant="8" id="QCP-bZ-bFH"/>
+                            <constraint firstItem="3WQ-Bs-kdI" firstAttribute="top" secondItem="IjD-uk-HUu" secondAttribute="bottom" constant="6" id="Sb6-ti-Amc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fIm-2b-xLd" secondAttribute="trailing" id="VWU-3z-gNf"/>
+                            <constraint firstItem="3WQ-Bs-kdI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Vit-cp-rbt"/>
+                            <constraint firstItem="qul-yO-KCe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Xfy-Fb-FXi"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cX5-Ox-oi7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jJN-TM-XQw" secondAttribute="trailing" constant="16" id="iT6-c6-Wx4"/>
+                            <constraint firstItem="bBh-LF-JHv" firstAttribute="top" secondItem="fIm-2b-xLd" secondAttribute="bottom" constant="18" id="lxm-dY-Ksa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zax-6p-Dgs"/>
                     <connections>
+                        <outlet property="apiLicenseLabel" destination="qul-yO-KCe" id="vyN-lN-pb6"/>
                         <outlet property="detailImage" destination="fIm-2b-xLd" id="TDt-ez-YXC"/>
+                        <outlet property="freeLabel" destination="IjD-uk-HUu" id="g1k-ae-Rvc"/>
+                        <outlet property="imageFormatLabel" destination="bBh-LF-JHv" id="66L-rR-6dv"/>
+                        <outlet property="noAttributionLabel" destination="3WQ-Bs-kdI" id="ri2-nK-RoC"/>
+                        <outlet property="shareButton" destination="CTw-co-oax" id="u0k-HL-dLK"/>
                         <outlet property="zoomButton" destination="jJN-TM-XQw" id="3yi-dn-tcK"/>
                     </connections>
                 </viewController>
@@ -82,8 +140,18 @@
     </scenes>
     <resources>
         <image name="magnifier" width="19" height="19"/>
+        <image name="share" width="14" height="16"/>
+        <namedColor name="blueColor">
+            <color red="0.2627450980392157" green="0.043137254901960784" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nightRiderColor">
+            <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="textFieldColor">
             <color red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textFieldFontColor">
+            <color red="0.45490196078431372" green="0.45490196078431372" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
