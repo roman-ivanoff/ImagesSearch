@@ -8,8 +8,10 @@
 import Foundation
 
 class ImageModel {
+    var id: String = "1"
     var images: [ImageHit] = []
     let imageHitService = ImagesHitService()
+    var relatedImages: [ImageHit] = []
 
     func getImage(
         imageId: String,

@@ -174,8 +174,8 @@ extension ImagesListViewController: UICollectionViewDelegate {
         let imageDetailVC = storyboard
             .instantiateViewController(withIdentifier: "imageDetail") as! ImageDetailViewController
         let image = imageModel.images[indexPath.row]
-        imageDetailVC.id = String(image.id)
-        imageDetailVC.images = imageModel.getRelatedImages(image: image, images: imageModel.images)
+        imageDetailVC.imageModel.id = String(image.id)
+        imageDetailVC.imageModel.relatedImages = imageModel.getRelatedImages(image: image, images: imageModel.images)
         self.navigationController?.pushViewController(imageDetailVC, animated: true)
     }
 

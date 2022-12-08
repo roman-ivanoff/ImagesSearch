@@ -8,13 +8,11 @@
 import UIKit
 
 class ImageDetailViewController: UIViewController {
-    var id: String!
-    var images: [ImageHit] = []
+    let imageModel = ImageModel()
+    let cellId = "imageCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("--------------- \(id)")
-        print(images.count)
 
         view.backgroundColor = .red
     }
