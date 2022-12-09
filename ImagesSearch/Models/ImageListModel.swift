@@ -55,4 +55,21 @@ class ImageListModel {
         imagesWithoutImage :
         Array(imagesWithoutImage.prefix(perPage))
     }
+
+    private func getTags() -> [String] {
+        var tags: [String] = []
+
+        for image in images {
+            tags.append(
+                contentsOf: image.tags.components(separatedBy: ",")
+                    .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            )
+        }
+
+        return unique(source: tags)
+    }
+
+    private func unique(source: [String]) -> [String] {
+        return Array(Set(source.map { $0 }))
+    }
 }
