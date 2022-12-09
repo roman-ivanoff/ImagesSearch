@@ -37,13 +37,18 @@ class ImageCollectionViewCell: UICollectionViewCell, SMIdentifiable {
                     } else {
                         self.shareButton.isHidden = false
                     }
-//                    self.shareButton.isHidden = false
                 case .failure:
                     self.shareButton.isHidden = true
                 }
             }
 
         imageView.contentMode = .scaleAspectFill
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        shareButton.isHidden = true
     }
 
 }

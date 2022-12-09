@@ -233,7 +233,6 @@ extension ImagesListViewController: UICollectionViewDataSource {
             withReuseIdentifier: ImageCollectionViewCell.identifier,
             for: indexPath
         ) as? ImageCollectionViewCell {
-            imageCell.shareButton.isHidden = true
             imageCell.shareButton.tag = indexPath.row
             let url = URL(string: imageModel.images[indexPath.row].webformatURL)!
             imageCell.configureCell(url: url, isHideButton: false)
