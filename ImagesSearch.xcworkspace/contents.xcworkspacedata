@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ImageSearchNavBar.swift">
+   </FileRef>
+   <FileRef
       location = "group:ImagesSearch.xcodeproj">
    </FileRef>
    <FileRef
