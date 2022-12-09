@@ -43,6 +43,9 @@ class ImagesListViewController: UIViewController {
     }
 
     private func setNavBar() {
+        additionalSafeAreaInsets.top = 24
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.view.backgroundColor = .white
         let textField = SearchTextField(frame: CGRect(
             x: 0,
             y: 0,

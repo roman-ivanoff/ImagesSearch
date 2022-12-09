@@ -112,7 +112,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dIV-aG-9iJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xvm-OF-yIZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xvm-OF-yIZ" customClass="ImageSearchNavBar" customModule="ImagesSearch" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
