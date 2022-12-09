@@ -1,6 +1,6 @@
 //
 //  ImageSearchNavBar.swift
-//  
+//  ImagesSearch
 //
 //  Created by Roman Ivanov on 09.12.2022.
 //
