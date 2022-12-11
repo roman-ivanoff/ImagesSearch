@@ -47,7 +47,7 @@ class ImageCollectionViewCell: UICollectionViewCell, SMIdentifiable {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+
         shareButton.isHidden = true
     }
 
