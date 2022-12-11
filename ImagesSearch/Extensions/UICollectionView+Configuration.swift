@@ -8,7 +8,7 @@
 import UIKit
 
 extension UICollectionView {
-    func registerCustomCell(_ cell: SMIdentifiable.Type) {
+    func registerCustomCell(_ cell: NIBAble.Type) {
         register(cell.nib, forCellWithReuseIdentifier: cell.identifier)
     }
 }

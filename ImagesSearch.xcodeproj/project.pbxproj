@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		726B208D352317C3FDB38A26 /* Pods_ImagesSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC884323A1092395A49C284 /* Pods_ImagesSearch.framework */; };
+		FD11F106294642EF004EAD01 /* NIBAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11F105294642EF004EAD01 /* NIBAble.swift */; };
 		FD3319BE2942709400FBBD2C /* SMIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3319BD2942709400FBBD2C /* SMIdentifiable.swift */; };
 		FD3319C0294270B800FBBD2C /* UICollectionView+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3319BF294270B800FBBD2C /* UICollectionView+Configuration.swift */; };
 		FD340D53292CC34700B40917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD340D52292CC34700B40917 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		0EC884323A1092395A49C284 /* Pods_ImagesSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImagesSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15F72476196F01FF111B9CF0 /* Pods-ImagesSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagesSearch.release.xcconfig"; path = "Target Support Files/Pods-ImagesSearch/Pods-ImagesSearch.release.xcconfig"; sourceTree = "<group>"; };
 		41ECB0665AC71B2980DBD618 /* Pods-ImagesSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagesSearch.debug.xcconfig"; path = "Target Support Files/Pods-ImagesSearch/Pods-ImagesSearch.debug.xcconfig"; sourceTree = "<group>"; };
+		FD11F105294642EF004EAD01 /* NIBAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBAble.swift; sourceTree = "<group>"; };
 		FD3319BD2942709400FBBD2C /* SMIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMIdentifiable.swift; sourceTree = "<group>"; };
 		FD3319BF294270B800FBBD2C /* UICollectionView+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Configuration.swift"; sourceTree = "<group>"; };
 		FD340D4F292CC34700B40917 /* ImagesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				FD3319BD2942709400FBBD2C /* SMIdentifiable.swift */,
+				FD11F105294642EF004EAD01 /* NIBAble.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				FD9C7D12292E75AA008BD1DF /* UIButton+Configuration.swift in Sources */,
 				FDDF09C629423FA700E4C93D /* HeaderView.swift in Sources */,
 				FD340D57292CC34700B40917 /* ViewController.swift in Sources */,
+				FD11F106294642EF004EAD01 /* NIBAble.swift in Sources */,
 				FDB0B168293CC2DE0026D7AD /* ImageCollectionViewCell.swift in Sources */,
 				FD340D85292CCF5900B40917 /* UIView+Overlay.swift in Sources */,
 				FD998AE7293818B40093E5DD /* ImageListModel.swift in Sources */,
