@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pus-Uh-hxk">
-                                <rect key="frame" x="0.0" y="499" width="390" height="345"/>
+                                <rect key="frame" x="16" y="499" width="358" height="345"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wAA-6d-jvE">
                                     <size key="itemSize" width="128" height="128"/>
@@ -118,11 +118,11 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerCell" id="zi7-hH-dJA" customClass="HeaderView" customModule="ImagesSearch" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Related" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ab-3Y-jei">
-                                            <rect key="frame" x="16" y="12.000000000000002" width="358" height="24.666666666666671"/>
+                                            <rect key="frame" x="16" y="12.000000000000002" width="326" height="24.666666666666671"/>
                                             <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -155,7 +155,7 @@
                             <constraint firstItem="IjD-uk-HUu" firstAttribute="top" secondItem="bBh-LF-JHv" secondAttribute="bottom" constant="6" id="J1s-O4-YuR"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LZ5-dj-ZQV"/>
                             <constraint firstItem="IjD-uk-HUu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Mio-g9-AL0"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pus-Uh-hxk" secondAttribute="trailing" id="NNA-i1-Qvr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pus-Uh-hxk" secondAttribute="trailing" constant="16" id="NNA-i1-Qvr"/>
                             <constraint firstItem="CTw-co-oax" firstAttribute="bottom" secondItem="3WQ-Bs-kdI" secondAttribute="bottom" constant="8" id="QCP-bZ-bFH"/>
                             <constraint firstItem="3WQ-Bs-kdI" firstAttribute="top" secondItem="IjD-uk-HUu" secondAttribute="bottom" constant="6" id="Sb6-ti-Amc"/>
                             <constraint firstItem="PRC-20-uo0" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="VAd-Ro-El8"/>
@@ -166,7 +166,7 @@
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cX5-Ox-oi7"/>
                             <constraint firstItem="PRC-20-uo0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eX5-ak-0IY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jJN-TM-XQw" secondAttribute="trailing" constant="16" id="iT6-c6-Wx4"/>
-                            <constraint firstItem="pus-Uh-hxk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jFg-87-6Pv"/>
+                            <constraint firstItem="pus-Uh-hxk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="jFg-87-6Pv"/>
                             <constraint firstItem="bBh-LF-JHv" firstAttribute="top" secondItem="fIm-2b-xLd" secondAttribute="bottom" constant="18" id="lxm-dY-Ksa"/>
                             <constraint firstAttribute="bottom" secondItem="pus-Uh-hxk" secondAttribute="bottom" id="o6q-03-heA"/>
                         </constraints>
@@ -208,6 +208,11 @@
             <point key="canvasLocation" x="75.384615384615387" y="3.5545023696682461"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="HDT-eC-IR3">
+            <size key="intrinsicContentSize" width="-1" height="44"/>
+        </designable>
+    </designables>
     <resources>
         <image name="download" width="14" height="16"/>
         <image name="magnifier" width="19" height="19"/>

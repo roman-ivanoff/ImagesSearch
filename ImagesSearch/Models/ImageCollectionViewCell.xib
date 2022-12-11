@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Hh-jM-CJJ">
-                        <rect key="frame" x="16" y="0.0" width="190" height="98"/>
+                        <rect key="frame" x="0.0" y="0.0" width="222" height="98"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Z1-k4-hgi">
-                        <rect key="frame" x="146" y="16" width="44" height="44"/>
+                        <rect key="frame" x="162" y="16" width="44" height="44"/>
                         <color key="backgroundColor" name="textFieldColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="0iC-82-YH2"/>
@@ -42,9 +42,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="6Z1-k4-hgi" firstAttribute="top" secondItem="8Hh-jM-CJJ" secondAttribute="top" constant="16" id="08P-bV-CX6"/>
-                <constraint firstAttribute="trailing" secondItem="8Hh-jM-CJJ" secondAttribute="trailing" constant="16" id="4jD-8Y-yez"/>
+                <constraint firstAttribute="trailing" secondItem="8Hh-jM-CJJ" secondAttribute="trailing" id="4jD-8Y-yez"/>
                 <constraint firstAttribute="bottom" secondItem="8Hh-jM-CJJ" secondAttribute="bottom" id="RxR-sB-0V3"/>
-                <constraint firstItem="8Hh-jM-CJJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="UPb-Fj-trU"/>
+                <constraint firstItem="8Hh-jM-CJJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UPb-Fj-trU"/>
                 <constraint firstItem="8Hh-jM-CJJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="W8X-IV-FMN"/>
                 <constraint firstItem="8Hh-jM-CJJ" firstAttribute="trailing" secondItem="6Z1-k4-hgi" secondAttribute="trailing" constant="16" id="tpr-jZ-0Tp"/>
             </constraints>

@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z46-Wn-Cya">
-                                <rect key="frame" x="0.0" y="133.66666666666669" width="390" height="676.33333333333326"/>
+                                <rect key="frame" x="16" y="133.66666666666669" width="358" height="676.33333333333326"/>
                                 <color key="backgroundColor" name="lightGrayColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZfS-lW-df7">
                                     <size key="itemSize" width="386" height="217"/>
@@ -40,7 +40,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="g9s-GK-5d2" customClass="ImageCollectionViewCell" customModule="ImagesSearch" customModuleProvider="target">
-                                        <rect key="frame" x="2" y="0.0" width="386" height="217"/>
+                                        <rect key="frame" x="-14" y="0.0" width="386" height="217"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yGg-Qy-OS1">
                                             <rect key="frame" x="0.0" y="0.0" width="386" height="217"/>
@@ -61,11 +61,11 @@
                             <constraint firstItem="JWx-fc-kJC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="7" id="BWM-TZ-2GR"/>
                             <constraint firstItem="JWx-fc-kJC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CKN-C7-gKP"/>
                             <constraint firstItem="Wqy-JR-d4n" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="VLD-Vq-W6J"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="z46-Wn-Cya" secondAttribute="trailing" id="YPx-gy-sUG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="z46-Wn-Cya" secondAttribute="trailing" constant="16" id="YPx-gy-sUG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="z46-Wn-Cya" secondAttribute="bottom" id="hdY-y5-KXi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JWx-fc-kJC" secondAttribute="trailing" constant="16" id="m0f-dI-feX"/>
                             <constraint firstItem="z46-Wn-Cya" firstAttribute="top" secondItem="JWx-fc-kJC" secondAttribute="bottom" constant="11" id="oG8-2T-LtX"/>
-                            <constraint firstItem="z46-Wn-Cya" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yPs-rD-koW"/>
+                            <constraint firstItem="z46-Wn-Cya" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="yPs-rD-koW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o2S-CT-ray"/>
@@ -98,6 +98,11 @@
             <point key="canvasLocation" x="75.384615384615387" y="3.5545023696682461"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="d9b-uo-w80">
+            <size key="intrinsicContentSize" width="-1" height="44"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="lightGrayColor">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
