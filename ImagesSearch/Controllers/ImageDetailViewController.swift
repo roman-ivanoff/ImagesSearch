@@ -106,10 +106,6 @@ class ImageDetailViewController: UIViewController {
         showHiddenViews()
     }
 
-//    private func registerCell(_ collectionView: UICollectionView, id: String) {
-//        collectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: id)
-//    }
-
     private func showErrorAlert(title: String, message: String) {
         let dialogMessage = UIAlertController(
             title: title,
@@ -121,6 +117,20 @@ class ImageDetailViewController: UIViewController {
         present(dialogMessage, animated: true)
     }
 
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            showErrorAlert(
+                title: NSLocalizedString("error", comment: ""),
+                message: error.localizedDescription
+            )
+        } else {
+            showErrorAlert(
+                title: NSLocalizedString("success", comment: ""),
+                message: NSLocalizedString("image_saved", comment: "")
+            )
+        }
+    }
+
     // MARK: - Actions
     @IBAction func zoomImageAction(_ sender: UIButton) {
     }
@@ -129,6 +139,13 @@ class ImageDetailViewController: UIViewController {
     }
 
     @IBAction func shareImageAction(_ sender: ShareButton) {
+        guard let imageToShare = detailImage.image else {
+            return
+        }
+
+        let activityViewController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
 
