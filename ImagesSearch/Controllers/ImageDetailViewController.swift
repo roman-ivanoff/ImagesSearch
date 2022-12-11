@@ -136,6 +136,13 @@ class ImageDetailViewController: UIViewController {
     }
 
     @IBAction func downloadImageAction(_ sender: SearchButton) {
+        guard let selectedImage = detailImage.image else {
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(
+            selectedImage,
+            self,
+            #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
 
     @IBAction func shareImageAction(_ sender: ShareButton) {

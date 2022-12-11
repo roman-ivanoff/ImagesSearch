@@ -17,3 +17,6 @@
 "error" = "Error";
 "error_message" = "Please, enter search term";
 "cannot_load_images" = "Cannot load images";
+"related" = "Related";
+"success" = "Success";
+"image_saved" = "Image has been saved to your photos.";
