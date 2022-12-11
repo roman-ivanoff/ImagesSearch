@@ -50,7 +50,7 @@ class ImagesListViewController: UIViewController {
             navigationController?.navigationBar.standardAppearance = navBarAppearance
             navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         }
-        
+
         additionalSafeAreaInsets.top = 24
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.view.backgroundColor = .white
@@ -73,6 +73,7 @@ class ImagesListViewController: UIViewController {
 
         let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 52, height: 52))
         backButton.backgroundColor = UIColor(named: "violetColor")
+        backButton.layer.cornerRadius = 5
         backButton.setImage(UIImage(named: "p"), for: .normal)
         backButton.addTarget(self, action: #selector(backToMain(_:)), for: .touchUpInside)
         let leftBarButtonItem = UIBarButtonItem(customView: backButton)
