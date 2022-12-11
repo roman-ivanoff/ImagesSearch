@@ -43,6 +43,14 @@ class ImagesListViewController: UIViewController {
     }
 
     private func setNavBar() {
+        if #available(iOS 15, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.shadowImage = UIImage()
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        }
+        
         additionalSafeAreaInsets.top = 24
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.view.backgroundColor = .white
