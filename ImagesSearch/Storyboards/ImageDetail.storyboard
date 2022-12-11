@@ -98,9 +98,13 @@
                                     <action selector="downloadImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EUV-6Q-kMP"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pus-Uh-hxk">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuR-fB-HMM">
+                                <rect key="frame" x="0.0" y="499" width="390" height="345"/>
+                                <color key="backgroundColor" name="lightGrayColor"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pus-Uh-hxk">
                                 <rect key="frame" x="16" y="499" width="358" height="345"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="lightGrayColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wAA-6d-jvE">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
@@ -115,6 +119,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="lightGrayColor"/>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerCell" id="zi7-hH-dJA" customClass="HeaderView" customModule="ImagesSearch" customModuleProvider="target">
@@ -128,6 +133,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" name="lightGrayColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="5ab-3Y-jei" secondAttribute="trailing" constant="16" id="0Op-0g-GHb"/>
                                         <constraint firstItem="5ab-3Y-jei" firstAttribute="leading" secondItem="zi7-hH-dJA" secondAttribute="leading" constant="16" id="P1A-vc-wlO"/>
@@ -150,19 +156,23 @@
                             <constraint firstItem="qul-yO-KCe" firstAttribute="top" secondItem="fIm-2b-xLd" secondAttribute="bottom" constant="18" id="7XX-5q-FyT"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="bottom" secondItem="jJN-TM-XQw" secondAttribute="bottom" constant="16" id="8Zc-Qa-jRX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CTw-co-oax" secondAttribute="trailing" constant="16" id="A8i-fS-WGN"/>
+                            <constraint firstAttribute="bottom" secondItem="iuR-fB-HMM" secondAttribute="bottom" id="DdZ-t6-VGm"/>
                             <constraint firstItem="mlX-2M-6Db" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="EAa-2S-7Gx"/>
                             <constraint firstItem="mlX-2M-6Db" firstAttribute="top" secondItem="3WQ-Bs-kdI" secondAttribute="bottom" constant="24" id="G1I-V7-DYX"/>
                             <constraint firstItem="IjD-uk-HUu" firstAttribute="top" secondItem="bBh-LF-JHv" secondAttribute="bottom" constant="6" id="J1s-O4-YuR"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LZ5-dj-ZQV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iuR-fB-HMM" secondAttribute="trailing" id="MCQ-yW-bfE"/>
                             <constraint firstItem="IjD-uk-HUu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Mio-g9-AL0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pus-Uh-hxk" secondAttribute="trailing" constant="16" id="NNA-i1-Qvr"/>
                             <constraint firstItem="CTw-co-oax" firstAttribute="bottom" secondItem="3WQ-Bs-kdI" secondAttribute="bottom" constant="8" id="QCP-bZ-bFH"/>
                             <constraint firstItem="3WQ-Bs-kdI" firstAttribute="top" secondItem="IjD-uk-HUu" secondAttribute="bottom" constant="6" id="Sb6-ti-Amc"/>
+                            <constraint firstItem="iuR-fB-HMM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UBB-GO-TqJ"/>
                             <constraint firstItem="PRC-20-uo0" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="VAd-Ro-El8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fIm-2b-xLd" secondAttribute="trailing" id="VWU-3z-gNf"/>
                             <constraint firstItem="3WQ-Bs-kdI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Vit-cp-rbt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mlX-2M-6Db" secondAttribute="trailing" constant="16" id="W5k-gv-xnQ"/>
                             <constraint firstItem="qul-yO-KCe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Xfy-Fb-FXi"/>
+                            <constraint firstItem="iuR-fB-HMM" firstAttribute="top" secondItem="mlX-2M-6Db" secondAttribute="bottom" constant="24" id="b2a-P5-oAG"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cX5-Ox-oi7"/>
                             <constraint firstItem="PRC-20-uo0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eX5-ak-0IY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jJN-TM-XQw" secondAttribute="trailing" constant="16" id="iT6-c6-Wx4"/>
@@ -219,6 +229,9 @@
         <image name="share" width="14" height="16"/>
         <namedColor name="blueColor">
             <color red="0.2627450980392157" green="0.043137254901960784" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightGrayColor">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="nightRiderColor">
             <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

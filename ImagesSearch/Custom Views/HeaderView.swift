@@ -12,7 +12,7 @@ class HeaderView: UICollectionReusableView {
     @IBOutlet weak var relatedLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        relatedLabel.text = NSLocalizedString("related", comment: "")
     }
-    
 }
