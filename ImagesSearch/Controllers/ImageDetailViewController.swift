@@ -40,6 +40,8 @@ class ImageDetailViewController: UIViewController {
         relatedCollectionView.dataSource = self
         relatedCollectionView.register(UINib(nibName: "HeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
 
+        scrollView.delegate = self
+
         loadData(id: imageModel.id)
     }
 
@@ -90,6 +92,7 @@ class ImageDetailViewController: UIViewController {
         detailImage.isHidden = true
         zoomButton.isHidden = true
         imageFormatLabel.isHidden = true
+        lightGrayView.isHidden = true
     }
 
     private func showHiddenViews() {
@@ -102,6 +105,7 @@ class ImageDetailViewController: UIViewController {
         detailImage.isHidden = false
 //        zoomButton.isHidden = false
         imageFormatLabel.isHidden = false
+        lightGrayView.isHidden = false
     }
 
     private func reloadCollectionView() {
@@ -135,8 +139,29 @@ class ImageDetailViewController: UIViewController {
         }
     }
 
+    private func showZoomViews() {
+            scrollView.isHidden = false
+            scrollImageView.isHidden = false
+            finishZoomButton.isHidden = false
+        }
+
+        private func hideZoomViews() {
+            scrollView.isHidden = true
+            scrollImageView.isHidden = true
+            finishZoomButton.isHidden = true
+        }
+
     // MARK: - Actions
     @IBAction func zoomImageAction(_ sender: UIButton) {
+        UIView.transition(with: view, duration: 0.4, options: .transitionCrossDissolve) { [self] in
+            guard let image = self.detailImage.image else {
+                return
+            }
+
+            self.scrollImageView.image = image
+            self.hideViews()
+            self.showZoomViews()
+        }
     }
 
     @IBAction func downloadImageAction(_ sender: SearchButton) {
@@ -150,8 +175,14 @@ class ImageDetailViewController: UIViewController {
     }
 
     @IBAction func finishZoomAction(_ sender: UIButton) {
+        scrollView.zoomScale = 1
+        UIView.transition(with: view, duration: 0.4, options: .transitionCrossDissolve) { [self] in
+            self.hideZoomViews()
+            self.showHiddenViews()
+            zoomButton.isHidden = false
+        }
     }
-    
+
     @IBAction func shareImageAction(_ sender: ShareButton) {
         guard let imageToShare = detailImage.image else {
             return
@@ -228,5 +259,45 @@ extension ImageDetailViewController: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         return CGSize(width: (collectionView.frame.width - 10) / 2, height: 129)
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension ImageDetailViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return scrollImageView
+    }
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        if scrollView.zoomScale > 1 {
+            guard let image = scrollImageView.image else {
+                return
+            }
+
+            let ratioW = scrollImageView.frame.width / image.size.width
+            let ratioH = scrollImageView.frame.height / image.size.height
+            let ratio = ratioW < ratioH ? ratioW : ratioH
+
+            let newWidth = image.size.width * ratio
+            let newHeight = image.size.height * ratio
+
+            let conditionLeft = newWidth * scrollView.zoomScale > scrollImageView.frame.width
+            let left = 0.5 * (
+                conditionLeft ?
+                newWidth - scrollImageView.frame.width :
+                    scrollView.frame.width - scrollView.contentSize.width
+            )
+
+            let conditionTop = newHeight * scrollView.zoomScale > scrollImageView.frame.height
+            let top = 0.5 * (
+                conditionTop ?
+                newHeight - scrollImageView.frame.height :
+                    scrollView.frame.height - scrollView.contentSize.height
+            )
+
+            scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: top, right: left)
+        } else {
+            scrollView.contentInset = .zero
+        }
     }
 }
