@@ -147,10 +147,44 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="PRC-20-uo0">
                                 <rect key="frame" x="185" y="412" width="20" height="20"/>
                             </activityIndicatorView>
+                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBI-Oq-wwp">
+                                <rect key="frame" x="0.0" y="91" width="390" height="753"/>
+                                <subviews>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T23-T1-Ny6">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
+                                    </imageView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoz-5e-742">
+                                        <rect key="frame" x="330" y="693" width="44" height="44"/>
+                                        <color key="backgroundColor" name="lineGrayColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="5VL-5M-fOU"/>
+                                            <constraint firstAttribute="height" constant="44" id="TFA-hD-kBn"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="magnifier"/>
+                                        <connections>
+                                            <action selector="finishZoomAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iiM-68-BZa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="T23-T1-Ny6" firstAttribute="height" secondItem="dzh-nN-ARZ" secondAttribute="height" id="63g-mF-QAv"/>
+                                    <constraint firstItem="T23-T1-Ny6" firstAttribute="bottom" secondItem="YKk-Hu-3FJ" secondAttribute="bottom" id="Ngm-jv-gIZ"/>
+                                    <constraint firstItem="T23-T1-Ny6" firstAttribute="width" secondItem="dzh-nN-ARZ" secondAttribute="width" id="WjY-fn-8Dd"/>
+                                    <constraint firstItem="dzh-nN-ARZ" firstAttribute="trailing" secondItem="Yoz-5e-742" secondAttribute="trailing" constant="16" id="Xk1-UF-ZGH"/>
+                                    <constraint firstItem="T23-T1-Ny6" firstAttribute="top" secondItem="YKk-Hu-3FJ" secondAttribute="top" id="aO1-bE-0eh"/>
+                                    <constraint firstItem="dzh-nN-ARZ" firstAttribute="bottom" secondItem="Yoz-5e-742" secondAttribute="bottom" constant="16" id="eJw-PO-aI4"/>
+                                    <constraint firstItem="T23-T1-Ny6" firstAttribute="trailing" secondItem="YKk-Hu-3FJ" secondAttribute="trailing" id="lEN-3U-OiD"/>
+                                    <constraint firstItem="T23-T1-Ny6" firstAttribute="leading" secondItem="YKk-Hu-3FJ" secondAttribute="leading" id="mEL-yV-7q6"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="YKk-Hu-3FJ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="dzh-nN-ARZ"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zBI-Oq-wwp" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="18k-xR-jkb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bBh-LF-JHv" secondAttribute="trailing" constant="16" id="2KY-B2-Kxc"/>
                             <constraint firstItem="pus-Uh-hxk" firstAttribute="top" secondItem="mlX-2M-6Db" secondAttribute="bottom" constant="24" id="4s5-1a-BIp"/>
                             <constraint firstItem="qul-yO-KCe" firstAttribute="top" secondItem="fIm-2b-xLd" secondAttribute="bottom" constant="18" id="7XX-5q-FyT"/>
@@ -174,11 +208,14 @@
                             <constraint firstItem="qul-yO-KCe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Xfy-Fb-FXi"/>
                             <constraint firstItem="iuR-fB-HMM" firstAttribute="top" secondItem="mlX-2M-6Db" secondAttribute="bottom" constant="24" id="b2a-P5-oAG"/>
                             <constraint firstItem="fIm-2b-xLd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cX5-Ox-oi7"/>
+                            <constraint firstItem="zBI-Oq-wwp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="cf6-Hd-1Uo"/>
+                            <constraint firstAttribute="bottom" secondItem="zBI-Oq-wwp" secondAttribute="bottom" id="dxI-Jl-fel"/>
                             <constraint firstItem="PRC-20-uo0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eX5-ak-0IY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jJN-TM-XQw" secondAttribute="trailing" constant="16" id="iT6-c6-Wx4"/>
                             <constraint firstItem="pus-Uh-hxk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="jFg-87-6Pv"/>
                             <constraint firstItem="bBh-LF-JHv" firstAttribute="top" secondItem="fIm-2b-xLd" secondAttribute="bottom" constant="18" id="lxm-dY-Ksa"/>
                             <constraint firstAttribute="bottom" secondItem="pus-Uh-hxk" secondAttribute="bottom" id="o6q-03-heA"/>
+                            <constraint firstItem="zBI-Oq-wwp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xh6-1H-xW7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zax-6p-Dgs"/>
@@ -186,18 +223,22 @@
                         <outlet property="apiLicenseLabel" destination="qul-yO-KCe" id="vyN-lN-pb6"/>
                         <outlet property="detailImage" destination="fIm-2b-xLd" id="TDt-ez-YXC"/>
                         <outlet property="downloadButton" destination="mlX-2M-6Db" id="Pak-Qn-Oau"/>
+                        <outlet property="finishZoomButton" destination="Yoz-5e-742" id="8KV-ea-sm0"/>
                         <outlet property="freeLabel" destination="IjD-uk-HUu" id="g1k-ae-Rvc"/>
                         <outlet property="imageFormatLabel" destination="bBh-LF-JHv" id="66L-rR-6dv"/>
                         <outlet property="indicator" destination="PRC-20-uo0" id="ip2-9m-LFB"/>
+                        <outlet property="lightGrayView" destination="iuR-fB-HMM" id="ad4-wz-n1I"/>
                         <outlet property="noAttributionLabel" destination="3WQ-Bs-kdI" id="ri2-nK-RoC"/>
                         <outlet property="relatedCollectionView" destination="pus-Uh-hxk" id="Tdh-E9-f11"/>
+                        <outlet property="scrollImageView" destination="T23-T1-Ny6" id="WuR-S5-T9i"/>
+                        <outlet property="scrollView" destination="zBI-Oq-wwp" id="Ws1-Hr-Yp1"/>
                         <outlet property="shareButton" destination="CTw-co-oax" id="u0k-HL-dLK"/>
                         <outlet property="zoomButton" destination="jJN-TM-XQw" id="3yi-dn-tcK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="891" y="4"/>
+            <point key="canvasLocation" x="890.76923076923072" y="3.5545023696682461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u2P-Js-AJs">
@@ -232,6 +273,9 @@
         </namedColor>
         <namedColor name="lightGrayColor">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lineGrayColor">
+            <color red="0.82352941176470584" green="0.82352941176470584" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="nightRiderColor">
             <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

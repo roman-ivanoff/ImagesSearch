@@ -10,6 +10,10 @@ import Kingfisher
 
 class ImageDetailViewController: UIViewController {
     // MARK: - IBOutlets
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var lightGrayView: UIView!
+    @IBOutlet weak var scrollImageView: UIImageView!
+    @IBOutlet weak var finishZoomButton: UIButton!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var relatedCollectionView: UICollectionView!
     @IBOutlet weak var shareButton: ShareButton!
@@ -145,6 +149,9 @@ class ImageDetailViewController: UIViewController {
             #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
 
+    @IBAction func finishZoomAction(_ sender: UIButton) {
+    }
+    
     @IBAction func shareImageAction(_ sender: ShareButton) {
         guard let imageToShare = detailImage.image else {
             return
