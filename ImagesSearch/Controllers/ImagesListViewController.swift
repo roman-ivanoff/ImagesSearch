@@ -154,6 +154,7 @@ extension ImagesListViewController: UICollectionViewDelegate {
         let image = imageModel.images[indexPath.row]
         imageDetailVC.imageModel.id = String(image.id)
         imageDetailVC.imageModel.relatedImages = imageModel.getRelatedImages(image: image, images: imageModel.images)
+        imageDetailVC.sendingDelegate = self
         self.navigationController?.pushViewController(imageDetailVC, animated: true)
     }
 
@@ -240,5 +241,12 @@ extension ImagesListViewController: UICollectionViewDelegateFlowLayout {
         }
 
         return size
+    }
+}
+
+// MARK: - SearchTermSendingDelegate
+extension ImagesListViewController: SearchTermSendingDelegate {
+    func sendSearchTerm(searchTerm: String) {
+        fetchNewImages(searchTerm: searchTerm)
     }
 }

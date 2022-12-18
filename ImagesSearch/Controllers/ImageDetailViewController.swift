@@ -10,6 +10,7 @@ import Kingfisher
 
 class ImageDetailViewController: UIViewController {
     // MARK: - IBOutlets
+    @IBOutlet weak var customNavbarView: CustomNavBar!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lightGrayView: UIView!
     @IBOutlet weak var scrollImageView: UIImageView!
@@ -28,6 +29,14 @@ class ImageDetailViewController: UIViewController {
     // MARK: - Properties
     let imageModel = ImageModel()
     let cellId = "imageCell"
+    private lazy var searchDelegateObject = SearchDelegate { [weak self] searchTerm in
+        guard let self else {
+            return
+        }
+
+        self.sendingTerm(searchTerm: searchTerm)
+    }
+    var sendingDelegate: SearchTermSendingDelegate?
 
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -78,8 +87,18 @@ class ImageDetailViewController: UIViewController {
     }
 
     private func setupViews() {
+        setNavBar()
         indicator.startAnimating()
         hideViews()
+    }
+
+    private func setNavBar() {
+        customNavbarView.backButton.addTarget(self, action: #selector(backToPrevious(_:)), for: .touchUpInside)
+        customNavbarView.textField.addTarget(
+            searchDelegateObject,
+            action: #selector(SearchDelegate.editingChanged(_:)),
+            for: .editingChanged
+        )
     }
 
     private func hideViews() {
@@ -114,6 +133,10 @@ class ImageDetailViewController: UIViewController {
         showHiddenViews()
     }
 
+    @objc func backToPrevious(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
     private func showErrorAlert(title: String, message: String) {
         let dialogMessage = UIAlertController(
             title: title,
@@ -140,16 +163,21 @@ class ImageDetailViewController: UIViewController {
     }
 
     private func showZoomViews() {
-            scrollView.isHidden = false
-            scrollImageView.isHidden = false
-            finishZoomButton.isHidden = false
-        }
+        scrollView.isHidden = false
+        scrollImageView.isHidden = false
+        finishZoomButton.isHidden = false
+    }
 
-        private func hideZoomViews() {
-            scrollView.isHidden = true
-            scrollImageView.isHidden = true
-            finishZoomButton.isHidden = true
-        }
+    private func hideZoomViews() {
+        scrollView.isHidden = true
+        scrollImageView.isHidden = true
+        finishZoomButton.isHidden = true
+    }
+
+    private func sendingTerm(searchTerm: String) {
+        sendingDelegate?.sendSearchTerm(searchTerm: searchTerm)
+        self.navigationController?.popViewController(animated: true)
+    }
 
     // MARK: - Actions
     @IBAction func zoomImageAction(_ sender: UIButton) {

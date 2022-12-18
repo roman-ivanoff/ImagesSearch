@@ -32,4 +32,8 @@ class ImageModel {
             }
         }
     }
+
+    func getImageFormat() -> String {
+        return URL(string: images[0].largeImageURL)!.pathExtension.uppercased()
+    }
 }
