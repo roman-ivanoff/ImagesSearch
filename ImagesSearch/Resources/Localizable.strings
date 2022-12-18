@@ -20,3 +20,4 @@
 "related" = "Related";
 "success" = "Success";
 "image_saved" = "Image has been saved to your photos.";
+"photo_in_format" = "Photo in .%@ format";
