@@ -60,6 +60,12 @@ class ImageDetailViewController: UIViewController {
             guard let self else {
                 return
             }
+
+            self.imageFormatLabel.text = String(
+                format: NSLocalizedString("photo_in_format", comment: ""),
+                self.imageModel.getImageFormat()
+            )
+
             let url = URL(string: self.imageModel.images[0].largeImageURL)!
             let resource = ImageResource(downloadURL: url, cacheKey: url.absoluteString)
 
