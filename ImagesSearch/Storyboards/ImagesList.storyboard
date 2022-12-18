@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,13 +25,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="345 456 Free Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWx-fc-kJC">
-                                <rect key="frame" x="16" y="98" width="358" height="24.666666666666671"/>
+                                <rect key="frame" x="16" y="123" width="358" height="24.666666666666671"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z46-Wn-Cya">
-                                <rect key="frame" x="16" y="133.66666666666669" width="358" height="676.33333333333326"/>
+                                <rect key="frame" x="16" y="158.66666666666669" width="358" height="651.33333333333326"/>
                                 <color key="backgroundColor" name="lightGrayColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZfS-lW-df7">
                                     <size key="itemSize" width="386" height="217"/>
@@ -53,24 +54,35 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Wqy-JR-d4n">
                                 <rect key="frame" x="185" y="412" width="20" height="20"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTH-4y-Spm" customClass="CustomNavBar" customModule="ImagesSearch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="116"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="AQT-hC-Um5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="lightGrayColor"/>
                         <constraints>
                             <constraint firstItem="Wqy-JR-d4n" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1Av-fL-SIf"/>
-                            <constraint firstItem="JWx-fc-kJC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="7" id="BWM-TZ-2GR"/>
+                            <constraint firstItem="JWx-fc-kJC" firstAttribute="top" secondItem="bTH-4y-Spm" secondAttribute="bottom" constant="7" id="BWM-TZ-2GR"/>
                             <constraint firstItem="JWx-fc-kJC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CKN-C7-gKP"/>
+                            <constraint firstAttribute="trailing" secondItem="bTH-4y-Spm" secondAttribute="trailing" id="LqC-5L-IKA"/>
                             <constraint firstItem="Wqy-JR-d4n" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="VLD-Vq-W6J"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="z46-Wn-Cya" secondAttribute="trailing" constant="16" id="YPx-gy-sUG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="z46-Wn-Cya" secondAttribute="bottom" id="hdY-y5-KXi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JWx-fc-kJC" secondAttribute="trailing" constant="16" id="m0f-dI-feX"/>
                             <constraint firstItem="z46-Wn-Cya" firstAttribute="top" secondItem="JWx-fc-kJC" secondAttribute="bottom" constant="11" id="oG8-2T-LtX"/>
+                            <constraint firstItem="bTH-4y-Spm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="uf2-Wq-5gj"/>
+                            <constraint firstItem="bTH-4y-Spm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="xHa-ch-ffu"/>
                             <constraint firstItem="z46-Wn-Cya" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="yPs-rD-koW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o2S-CT-ray"/>
                     <connections>
                         <outlet property="collectionView" destination="z46-Wn-Cya" id="Jy2-0T-TlQ"/>
+                        <outlet property="customNavbarView" destination="bTH-4y-Spm" id="jhp-zb-J0X"/>
                         <outlet property="imageCountLabel" destination="JWx-fc-kJC" id="YO6-JS-wKX"/>
                         <outlet property="indicator" destination="Wqy-JR-d4n" id="bmt-0O-110"/>
                     </connections>
@@ -107,5 +119,8 @@
         <namedColor name="lightGrayColor">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

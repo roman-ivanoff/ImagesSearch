@@ -13,6 +13,7 @@ class ImagesListViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var imageCountLabel: UILabel!
+    @IBOutlet weak var customNavbarView: CustomNavBar!
     @IBOutlet weak var collectionView: UICollectionView!
 
     // MARK: - Properties
@@ -43,49 +44,13 @@ class ImagesListViewController: UIViewController {
     }
 
     private func setNavBar() {
-        if #available(iOS 15, *) {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.shadowImage = UIImage()
-            navigationController?.navigationBar.standardAppearance = navBarAppearance
-            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-        }
-
-        additionalSafeAreaInsets.top = 24
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.view.backgroundColor = .white
-        let textField = SearchTextField(frame: CGRect(
-            x: 0,
-            y: 0,
-            width: (navigationController?.navigationBar.frame.size.width)!,
-            height: 52
-        ))
-        textField.backgroundColor = UIColor(named: "lightGrayColor")
-        textField.placeholder = NSLocalizedString("textfield_placeholder", comment: "")
-        textField.addTarget(
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        customNavbarView.textField.addTarget(
             searchDelegateObject,
             action: #selector(SearchDelegate.editingChanged(_:)),
             for: .editingChanged
         )
-        navigationItem.titleView = textField
-
-        navigationItem.setHidesBackButton(true, animated: false)
-
-        let backButton = UIButton(frame: CGRect(x: 0, y: 0, width: 52, height: 52))
-        backButton.backgroundColor = UIColor(named: "violetColor")
-        backButton.layer.cornerRadius = 5
-        backButton.setImage(UIImage(named: "p"), for: .normal)
-        backButton.addTarget(self, action: #selector(backToMain(_:)), for: .touchUpInside)
-        let leftBarButtonItem = UIBarButtonItem(customView: backButton)
-        navigationItem.leftBarButtonItem = leftBarButtonItem
-
-        let settingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 52, height: 52))
-        settingsButton.layer.borderColor = UIColor(named: "textFieldColor")?.cgColor
-        settingsButton.layer.borderWidth = 1
-        settingsButton.layer.cornerRadius = 5
-        settingsButton.setImage(UIImage(named: "settings"), for: .normal)
-        let rightBarButtonItem = UIBarButtonItem(customView: settingsButton)
-        navigationItem.rightBarButtonItem = rightBarButtonItem
+        customNavbarView.backButton.addTarget(self, action: #selector(backToMain(_:)), for: .touchUpInside)
     }
 
     private func fetchImages() {
