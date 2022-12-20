@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TagCell: UICollectionViewCell {
+class TagCell: UICollectionViewCell, NIBAble {
     @IBOutlet weak var tagLabel: UILabel!
 
     override func awakeFromNib() {
