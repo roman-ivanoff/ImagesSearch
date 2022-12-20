@@ -48,6 +48,8 @@
 		FDDF09C32942338D00E4C93D /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF09C22942338D00E4C93D /* ShareButton.swift */; };
 		FDDF09C629423FA700E4C93D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF09C429423FA700E4C93D /* HeaderView.swift */; };
 		FDDF09C729423FA700E4C93D /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDDF09C529423FA700E4C93D /* HeaderView.xib */; };
+		FDE5E67529527FE70054089B /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5E67329527FE70054089B /* TagCell.swift */; };
+		FDE5E67629527FE70054089B /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE5E67429527FE70054089B /* TagCell.xib */; };
 		FDEEFBA729437D6D00E325C0 /* ImageSearchNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEEFBA629437D6D00E325C0 /* ImageSearchNavBar.swift */; };
 		FDFC2818292F677100649E88 /* DropdownButtonWIthBorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */; };
 		FDFC281A292F69BB00649E88 /* DropdownButtonWIthBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */; };
@@ -99,6 +101,8 @@
 		FDDF09C22942338D00E4C93D /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		FDDF09C429423FA700E4C93D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FDDF09C529423FA700E4C93D /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		FDE5E67329527FE70054089B /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		FDE5E67429527FE70054089B /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
 		FDEEFBA629437D6D00E325C0 /* ImageSearchNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchNavBar.swift; sourceTree = "<group>"; };
 		FDFC2817292F677100649E88 /* DropdownButtonWIthBorder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropdownButtonWIthBorder.xib; sourceTree = "<group>"; };
 		FDFC2819292F69BB00649E88 /* DropdownButtonWIthBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonWIthBorder.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				FDEEFBA629437D6D00E325C0 /* ImageSearchNavBar.swift */,
 				FD29F631294F2CE60066416E /* CustomNavBar.swift */,
 				FD29F633294F2CF00066416E /* CustomNavBar.xib */,
+				FDE5E67329527FE70054089B /* TagCell.swift */,
+				FDE5E67429527FE70054089B /* TagCell.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				FD340D6C292CC46600B40917 /* Localizable.strings in Resources */,
 				FD340D82292CC71500B40917 /* OpenSans-SemiBold.ttf in Resources */,
 				FD9C7D25292E7884008BD1DF /* ImageDetail.storyboard in Resources */,
+				FDE5E67629527FE70054089B /* TagCell.xib in Resources */,
 				FD29F634294F2CF00066416E /* CustomNavBar.xib in Resources */,
 				FD340D83292CC71500B40917 /* OpenSans-ExtraBold.ttf in Resources */,
 				FD340D5C292CC34900B40917 /* Assets.xcassets in Resources */,
@@ -445,6 +452,7 @@
 			files = (
 				FDDF09C32942338D00E4C93D /* ShareButton.swift in Sources */,
 				FDBB8371293E3597008AD521 /* SearchDelegate.swift in Sources */,
+				FDE5E67529527FE70054089B /* TagCell.swift in Sources */,
 				FD9C7D14292E76D5008BD1DF /* SearchButton.swift in Sources */,
 				FD9C7D27292E78B3008BD1DF /* ImagesListViewController.swift in Sources */,
 				FD9C7D1F292E7793008BD1DF /* ImageHit.swift in Sources */,
