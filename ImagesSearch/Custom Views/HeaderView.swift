@@ -7,12 +7,30 @@
 
 import UIKit
 
-class HeaderView: UICollectionReusableView {
-
+class HeaderView: UICollectionReusableView, NIBAble {
     @IBOutlet weak var relatedLabel: UILabel!
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+
+        initUIView()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        initUIView()
+    }
+
+    private func initUIView() {
+        guard let view = loadViewFromNib() else {
+            return
+        }
+        view.frame = self.bounds
+        addSubview(view)
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        relatedLabel.text = NSLocalizedString("related", comment: "")
     }
 }
