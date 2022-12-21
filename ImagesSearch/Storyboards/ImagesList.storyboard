@@ -25,13 +25,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="345 456 Free Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWx-fc-kJC">
-                                <rect key="frame" x="16" y="123" width="358" height="24.666666666666671"/>
+                                <rect key="frame" x="16" y="123.00000000000001" width="358" height="24.666666666666671"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTK-hn-OmB" customClass="TagCollectionView" customModule="ImagesSearch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="158.66666666666666" width="390" height="26"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="pdg-cu-4Iv"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z46-Wn-Cya">
-                                <rect key="frame" x="16" y="158.66666666666669" width="358" height="651.33333333333326"/>
+                                <rect key="frame" x="16" y="200.66666666666669" width="358" height="609.33333333333326"/>
                                 <color key="backgroundColor" name="lightGrayColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZfS-lW-df7">
                                     <size key="itemSize" width="386" height="217"/>
@@ -72,8 +79,11 @@
                             <constraint firstItem="Wqy-JR-d4n" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="VLD-Vq-W6J"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="z46-Wn-Cya" secondAttribute="trailing" constant="16" id="YPx-gy-sUG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="z46-Wn-Cya" secondAttribute="bottom" id="hdY-y5-KXi"/>
+                            <constraint firstItem="z46-Wn-Cya" firstAttribute="top" secondItem="wTK-hn-OmB" secondAttribute="bottom" constant="16" id="kSR-iV-PVI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JWx-fc-kJC" secondAttribute="trailing" constant="16" id="m0f-dI-feX"/>
-                            <constraint firstItem="z46-Wn-Cya" firstAttribute="top" secondItem="JWx-fc-kJC" secondAttribute="bottom" constant="11" id="oG8-2T-LtX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wTK-hn-OmB" secondAttribute="trailing" id="mlY-nY-VVo"/>
+                            <constraint firstItem="wTK-hn-OmB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="oXJ-gX-DuD"/>
+                            <constraint firstItem="wTK-hn-OmB" firstAttribute="top" secondItem="JWx-fc-kJC" secondAttribute="bottom" constant="11" id="p7y-yA-Vnu"/>
                             <constraint firstItem="bTH-4y-Spm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="uf2-Wq-5gj"/>
                             <constraint firstItem="bTH-4y-Spm" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="xHa-ch-ffu"/>
                             <constraint firstItem="z46-Wn-Cya" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="yPs-rD-koW"/>
@@ -85,6 +95,7 @@
                         <outlet property="customNavbarView" destination="bTH-4y-Spm" id="jhp-zb-J0X"/>
                         <outlet property="imageCountLabel" destination="JWx-fc-kJC" id="YO6-JS-wKX"/>
                         <outlet property="indicator" destination="Wqy-JR-d4n" id="bmt-0O-110"/>
+                        <outlet property="tagCollectionView" destination="wTK-hn-OmB" id="wXV-OB-zD8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

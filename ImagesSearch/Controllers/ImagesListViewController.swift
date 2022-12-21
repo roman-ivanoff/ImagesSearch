@@ -11,6 +11,7 @@ import Kingfisher
 // swiftlint:disable: force_cast
 class ImagesListViewController: UIViewController {
     // MARK: - IBOutlets
+    @IBOutlet weak var tagCollectionView: TagCollectionView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var imageCountLabel: UILabel!
     @IBOutlet weak var customNavbarView: CustomNavBar!
@@ -27,8 +28,8 @@ class ImagesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tagCollectionView.passTagDelegate = self
         setupViews()
-//        registerCell(collectionView, id: cellId)
         collectionView.registerCustomCell(ImageCollectionViewCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -64,6 +65,7 @@ class ImagesListViewController: UIViewController {
                 return
             }
             self.imageCountLabel.text = "\(self.imageModel.hits) Free Images"
+            self.tagCollectionView.passTags(tags: self.imageModel.tags)
             self.reloadCollectionView()
         } onError: { error in
             self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
@@ -77,16 +79,14 @@ class ImagesListViewController: UIViewController {
     }
 
     private func hideViews() {
+        tagCollectionView.isHidden = true
         collectionView.isHidden = true
     }
 
     private func showHiddenViews() {
+        tagCollectionView.isHidden = false
         collectionView.isHidden = false
     }
-
-//    private func registerCell(_ collectionView: UICollectionView, id: String) {
-//        collectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: id)
-//    }
 
     private func showErrorAlert(title: String, message: String) {
         let dialogMessage = UIAlertController(
@@ -117,6 +117,7 @@ class ImagesListViewController: UIViewController {
             }
 
             self.imageModel.searchTerm = searchTerm
+            self.tagCollectionView.passTags(tags: self.imageModel.tags)
             self.reloadCollectionView()
         } onError: { error in
             self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
@@ -248,5 +249,12 @@ extension ImagesListViewController: UICollectionViewDelegateFlowLayout {
 extension ImagesListViewController: SearchTermSendingDelegate {
     func sendSearchTerm(searchTerm: String) {
         fetchNewImages(searchTerm: searchTerm)
+    }
+}
+
+// MARK: - PassTagDelegate
+extension ImagesListViewController: PassTagDelegate {
+    func passTag(tag: String) {
+        fetchNewImages(searchTerm: tag)
     }
 }
