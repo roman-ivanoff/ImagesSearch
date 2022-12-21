@@ -8,13 +8,12 @@
 import UIKit
 
 class TagCell: UICollectionViewCell, NIBAble {
-    @IBOutlet weak var tagLabel: UILabel!
 
+    @IBOutlet weak var labelTag: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
 
         layer.cornerRadius = 5
         layer.masksToBounds = true
     }
-
 }

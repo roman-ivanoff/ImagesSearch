@@ -60,7 +60,7 @@ class ImageDetailViewController: UIViewController {
             guard let self else {
                 return
             }
-
+            self.toggleActivityIndicator(self.imageModel.isLoading)
             self.imageFormatLabel.text = String(
                 format: NSLocalizedString("photo_in_format", comment: ""),
                 self.imageModel.getImageFormat()
@@ -89,13 +89,17 @@ class ImageDetailViewController: UIViewController {
         } onError: { error in
             self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
         }
-
+        toggleActivityIndicator(imageModel.isLoading)
     }
 
     private func setupViews() {
         setNavBar()
         indicator.startAnimating()
         hideViews()
+    }
+
+    private func toggleActivityIndicator(_ isLoading: Bool) {
+        isLoading ? indicator.stopAnimating() : indicator.startAnimating()
     }
 
     private func setNavBar() {

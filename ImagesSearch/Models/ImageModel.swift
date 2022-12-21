@@ -12,6 +12,7 @@ class ImageModel {
     var images: [ImageHit] = []
     let imageHitService = ImagesHitService()
     var relatedImages: [ImageHit] = []
+    var isLoading = false
 
     func getImage(
         imageId: String,
@@ -23,10 +24,13 @@ class ImageModel {
                 return
             }
 
+            self.isLoading = true
+
             switch result {
             case let .success(data):
                 self.images = data.hits
                 onSuccess(data.hits)
+                self.isLoading = false
             case let .failure(error):
                 onError(error)
             }

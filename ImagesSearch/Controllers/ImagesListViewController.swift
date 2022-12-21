@@ -41,7 +41,7 @@ class ImagesListViewController: UIViewController {
     private func setupViews() {
         setNavBar()
         hideViews()
-        indicator.startAnimating()
+//        indicator.startAnimating()
     }
 
     private func setNavBar() {
@@ -54,6 +54,10 @@ class ImagesListViewController: UIViewController {
         customNavbarView.backButton.addTarget(self, action: #selector(backToMain(_:)), for: .touchUpInside)
     }
 
+    private func toggleActivityIndicator(_ isLoading: Bool) {
+        isLoading ? indicator.stopAnimating() : indicator.startAnimating()
+    }
+
     private func fetchImages() {
         imageModel.getImages(
             searchTerm: imageModel.searchTerm,
@@ -64,16 +68,18 @@ class ImagesListViewController: UIViewController {
             guard let self else {
                 return
             }
+            self.toggleActivityIndicator(self.imageModel.isLoading)
             self.imageCountLabel.text = "\(self.imageModel.hits) Free Images"
             self.tagCollectionView.passTags(tags: self.imageModel.tags)
             self.reloadCollectionView()
         } onError: { error in
             self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
         }
+        toggleActivityIndicator(imageModel.isLoading)
     }
 
     private func reloadCollectionView() {
-        indicator.stopAnimating()
+//        indicator.stopAnimating()
         collectionView.reloadData()
         showHiddenViews()
     }
@@ -104,7 +110,7 @@ class ImagesListViewController: UIViewController {
         imageModel.page = 1
 
         hideViews()
-        indicator.startAnimating()
+//        indicator.startAnimating()
 
         imageModel.getImages(
             searchTerm: searchTerm,
@@ -115,14 +121,14 @@ class ImagesListViewController: UIViewController {
             guard let self else {
                 return
             }
-
+            self.toggleActivityIndicator(self.imageModel.isLoading)
             self.imageModel.searchTerm = searchTerm
             self.tagCollectionView.passTags(tags: self.imageModel.tags)
             self.reloadCollectionView()
         } onError: { error in
             self.showErrorAlert(title: NSLocalizedString("error", comment: ""), message: error.localizedDescription)
         }
-
+        toggleActivityIndicator(imageModel.isLoading)
     }
 
     @objc func shareImage(_ sender: UIButton) {

@@ -79,7 +79,7 @@ extension TagCollectionView: UICollectionViewDataSource {
             withReuseIdentifier: TagCell.identifier,
             for: indexPath
         ) as? TagCell {
-            tagCell.tagLabel.text = tags[indexPath.row]
+            tagCell.labelTag.text = tags[indexPath.row]
 
             cell = tagCell
         }

@@ -9,12 +9,14 @@ import Foundation
 
 class ImageListModel {
     var images: [ImageHit] = []
+    var tags: [String] = []
     var hits = 0
     var page = 1
     let perPage = 20
     let imageHitService = ImagesHitService()
     var searchTerm = ""
     var imageType: ImageType = .photo
+    var isLoading = false
 
     func getImages(
         searchTerm: String,
@@ -33,12 +35,15 @@ class ImageListModel {
             guard let self else {
                 return
             }
+            self.isLoading = true
 
             switch result {
             case let .success(data):
                 self.images.append(contentsOf: data.hits)
                 self.hits = data.total
+                self.tags = self.getTags()
                 onSucces(data.hits)
+                self.isLoading = false
             case let .failure(error):
                 onError(error)
             }
