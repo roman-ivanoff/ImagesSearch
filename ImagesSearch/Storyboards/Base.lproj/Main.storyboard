@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dIV-aG-9iJ">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -26,73 +26,119 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImagesSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_start_screen" translatesAutoresizingMaskIntoConstraints="NO" id="lmh-RE-iMA">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_start_screen" translatesAutoresizingMaskIntoConstraints="NO" id="lmh-RE-iMA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo by Free-Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-tA-Ujp">
-                                <rect key="frame" x="134.66666666666666" y="793" width="121" height="17"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
-                                <color key="textColor" name="lightGrayColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabierz swoich odbiorców na wizualną przygodę" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zn0-dj-MDg">
-                                <rect key="frame" x="20" y="193" width="350" height="71"/>
-                                <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKl-wf-zqk" customClass="SearchButton" customModule="ImagesSearch" customModuleProvider="target">
-                                <rect key="frame" x="16" y="496" width="358" height="52"/>
-                                <color key="backgroundColor" name="violetColor"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ii-0e-pSA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gp-ir-tCD" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search images, vectors and more" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2d-IP-jSn" customClass="SearchTextField" customModule="ImagesSearch" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="243.5" width="343" height="52"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="5zG-pP-oKd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKl-wf-zqk" customClass="SearchButton" customModule="ImagesSearch" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="324.5" width="343" height="52"/>
+                                                <color key="backgroundColor" name="violetColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="3k5-An-CdV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="13" maxY="0.0"/>
+                                                <state key="normal" title="Search" image="search"/>
+                                                <connections>
+                                                    <action selector="searchAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xJq-HR-jMU"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo by Free-Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-tA-Ujp">
+                                                <rect key="frame" x="127" y="634.5" width="121" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
+                                                <color key="textColor" name="lightGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhi-qz-An8" userLabel="2">
+                                                <rect key="frame" x="0.0" y="192.5" width="375" height="43"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="6PI-Ya-h5J"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6B6-fz-Ea6" userLabel="1">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhG-1T-weE" userLabel="3">
+                                                <rect key="frame" x="0.0" y="376.5" width="375" height="258"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabierz swoich odbiorców na wizualną przygodę" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zn0-dj-MDg">
+                                                <rect key="frame" x="20" y="86" width="335" height="106.5"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="26"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="JhG-1T-weE" firstAttribute="height" secondItem="Dhi-qz-An8" secondAttribute="height" multiplier="6" id="0DA-sJ-S2M"/>
+                                            <constraint firstItem="JhG-1T-weE" firstAttribute="top" secondItem="ZKl-wf-zqk" secondAttribute="bottom" id="0Fh-xq-Oyd"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZKl-wf-zqk" secondAttribute="trailing" constant="16" id="0Id-XI-yLJ"/>
+                                            <constraint firstItem="6B6-fz-Ea6" firstAttribute="height" secondItem="Dhi-qz-An8" secondAttribute="height" multiplier="2" id="5Hd-Q2-qJ7"/>
+                                            <constraint firstAttribute="trailing" secondItem="E2d-IP-jSn" secondAttribute="trailing" constant="16" id="6Ia-Lf-wq6"/>
+                                            <constraint firstItem="RkC-tA-Ujp" firstAttribute="centerX" secondItem="3Gp-ir-tCD" secondAttribute="centerX" id="91q-ky-fXM"/>
+                                            <constraint firstItem="RkC-tA-Ujp" firstAttribute="centerX" secondItem="3Gp-ir-tCD" secondAttribute="centerX" id="9ec-89-YgL"/>
+                                            <constraint firstItem="6B6-fz-Ea6" firstAttribute="top" secondItem="3Gp-ir-tCD" secondAttribute="top" id="JA0-tJ-h3y"/>
+                                            <constraint firstItem="Zn0-dj-MDg" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" constant="20" id="K35-Fo-PTS"/>
+                                            <constraint firstItem="E2d-IP-jSn" firstAttribute="top" secondItem="Dhi-qz-An8" secondAttribute="bottom" constant="8" id="NTc-7n-ICq"/>
+                                            <constraint firstItem="E2d-IP-jSn" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" constant="16" id="Ygv-xB-lzt"/>
+                                            <constraint firstItem="ZKl-wf-zqk" firstAttribute="top" secondItem="E2d-IP-jSn" secondAttribute="bottom" constant="29" id="ckX-oP-44O"/>
+                                            <constraint firstItem="ZKl-wf-zqk" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" constant="16" id="csu-7y-NTK"/>
+                                            <constraint firstAttribute="trailing" secondItem="6B6-fz-Ea6" secondAttribute="trailing" id="ePW-dd-tF9"/>
+                                            <constraint firstItem="RkC-tA-Ujp" firstAttribute="top" secondItem="JhG-1T-weE" secondAttribute="bottom" id="eyh-Kx-dvT"/>
+                                            <constraint firstItem="Dhi-qz-An8" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" id="i9d-xS-eTr"/>
+                                            <constraint firstItem="JhG-1T-weE" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" id="iHZ-45-Jay"/>
+                                            <constraint firstItem="Zn0-dj-MDg" firstAttribute="top" secondItem="6B6-fz-Ea6" secondAttribute="bottom" id="igS-kf-eeD"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zn0-dj-MDg" secondAttribute="trailing" constant="20" id="kcZ-2D-OMe"/>
+                                            <constraint firstItem="6B6-fz-Ea6" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" id="oMF-y0-rfb"/>
+                                            <constraint firstAttribute="trailing" secondItem="JhG-1T-weE" secondAttribute="trailing" id="pe0-Pe-42k"/>
+                                            <constraint firstAttribute="bottom" secondItem="RkC-tA-Ujp" secondAttribute="bottom" constant="16" id="rXz-5z-Mpf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dhi-qz-An8" secondAttribute="trailing" id="sRp-22-kb4"/>
+                                            <constraint firstItem="Dhi-qz-An8" firstAttribute="top" secondItem="Zn0-dj-MDg" secondAttribute="bottom" id="t8T-sB-tGL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="3k5-An-CdV"/>
+                                    <constraint firstItem="nRn-DN-Te4" firstAttribute="bottom" secondItem="3Gp-ir-tCD" secondAttribute="bottom" id="7sv-I6-e0z"/>
+                                    <constraint firstItem="nRn-DN-Te4" firstAttribute="trailing" secondItem="3Gp-ir-tCD" secondAttribute="trailing" id="EbD-yR-7HN"/>
+                                    <constraint firstItem="3Gp-ir-tCD" firstAttribute="top" secondItem="nRn-DN-Te4" secondAttribute="top" id="H6N-2D-0Ef"/>
+                                    <constraint firstItem="3Gp-ir-tCD" firstAttribute="leading" secondItem="nRn-DN-Te4" secondAttribute="leading" id="Ohk-Yf-Cgq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="13" maxY="0.0"/>
-                                <state key="normal" title="Search" image="search"/>
-                                <connections>
-                                    <action selector="searchAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xJq-HR-jMU"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search images, vectors and more" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2d-IP-jSn" customClass="SearchTextField" customModule="ImagesSearch" customModuleProvider="target">
-                                <rect key="frame" x="16" y="414" width="358" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="5zG-pP-oKd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <viewLayoutGuide key="contentLayoutGuide" id="nRn-DN-Te4"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="sbD-pH-6hK"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RkC-tA-Ujp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0YA-8p-M1P"/>
-                            <constraint firstItem="RkC-tA-Ujp" firstAttribute="top" secondItem="ZKl-wf-zqk" secondAttribute="bottom" constant="245" id="7bL-3w-eHZ">
-                                <variation key="heightClass=compact-widthClass=compact" constant="30"/>
-                                <variation key="heightClass=compact-widthClass=regular" constant="30"/>
-                            </constraint>
-                            <constraint firstAttribute="bottom" secondItem="lmh-RE-iMA" secondAttribute="bottom" id="AoB-m3-Pe7"/>
-                            <constraint firstItem="Zn0-dj-MDg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="193" id="BEg-0c-ora">
-                                <variation key="heightClass=compact-widthClass=compact" constant="50"/>
-                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
-                            </constraint>
-                            <constraint firstItem="ZKl-wf-zqk" firstAttribute="top" secondItem="E2d-IP-jSn" secondAttribute="bottom" constant="30" id="CpK-KS-dgx"/>
-                            <constraint firstItem="Zn0-dj-MDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GLp-2W-9Bn">
-                                <variation key="heightClass=compact-widthClass=compact" constant="-32"/>
-                                <variation key="heightClass=compact-widthClass=regular" constant="-32"/>
-                            </constraint>
-                            <constraint firstAttribute="bottom" secondItem="RkC-tA-Ujp" secondAttribute="bottom" constant="34" id="IAN-Ik-Sax"/>
-                            <constraint firstItem="E2d-IP-jSn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MTy-PV-7hl"/>
-                            <constraint firstItem="lmh-RE-iMA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cXr-2n-lk8"/>
-                            <constraint firstItem="ZKl-wf-zqk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eFu-gh-XdZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E2d-IP-jSn" secondAttribute="trailing" constant="16" id="kJa-bf-dKS"/>
-                            <constraint firstAttribute="trailing" secondItem="Zn0-dj-MDg" secondAttribute="trailing" constant="20" id="kO5-eZ-4Jg"/>
-                            <constraint firstAttribute="trailing" secondItem="lmh-RE-iMA" secondAttribute="trailing" id="p0t-RL-0Vx"/>
-                            <constraint firstItem="lmh-RE-iMA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rR2-b3-NCl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZKl-wf-zqk" secondAttribute="trailing" constant="16" id="uZ3-3J-ckg"/>
+                            <constraint firstAttribute="trailing" secondItem="7Ii-0e-pSA" secondAttribute="trailing" id="8FL-cL-2FU"/>
+                            <constraint firstItem="7Ii-0e-pSA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BXV-Ea-WID"/>
+                            <constraint firstAttribute="bottom" secondItem="7Ii-0e-pSA" secondAttribute="bottom" id="Fi1-bb-4Zn"/>
+                            <constraint firstItem="3Gp-ir-tCD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="MKd-Br-mYU"/>
+                            <constraint firstItem="7Ii-0e-pSA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YJd-iZ-Sq5"/>
+                            <constraint firstItem="lmh-RE-iMA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aI7-5w-rvT"/>
+                            <constraint firstItem="lmh-RE-iMA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iCl-O8-tXU"/>
+                            <constraint firstAttribute="bottom" secondItem="lmh-RE-iMA" secondAttribute="bottom" id="mVb-Wh-fVZ"/>
+                            <constraint firstItem="3Gp-ir-tCD" firstAttribute="height" secondItem="sbD-pH-6hK" secondAttribute="height" id="uOa-Xy-TrP"/>
+                            <constraint firstAttribute="trailing" secondItem="lmh-RE-iMA" secondAttribute="trailing" id="yCV-EJ-RLQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IKa-J7-5cX"/>
@@ -105,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.61538461538453" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="903.20000000000005" y="3.1484257871064472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b8J-7s-8dc">
@@ -113,7 +159,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dIV-aG-9iJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xvm-OF-yIZ" customClass="ImageSearchNavBar" customModule="ImagesSearch" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -126,6 +172,11 @@
             <point key="canvasLocation" x="-24.615384615384613" y="3.5545023696682461"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Xvm-OF-yIZ">
+            <size key="intrinsicContentSize" width="-1" height="44"/>
+        </designable>
+    </designables>
     <resources>
         <image name="background_start_screen" width="375" height="812"/>
         <image name="search" width="14" height="14"/>
