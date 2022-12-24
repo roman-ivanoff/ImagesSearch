@@ -47,7 +47,11 @@ class ImageDetailViewController: UIViewController {
         relatedCollectionView.registerCustomCell(ImageCollectionViewCell.self)
         relatedCollectionView.delegate = self
         relatedCollectionView.dataSource = self
-        relatedCollectionView.register(UINib(nibName: "HeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
+//        relatedCollectionView.register(
+//            HeaderView.self,
+//            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+//            withReuseIdentifier: HeaderView.identifier
+//        )
 
         scrollView.delegate = self
 
@@ -265,28 +269,28 @@ extension ImageDetailViewController: UICollectionViewDataSource {
         return cell
     }
 
-    func collectionView(
-        _ collectionView: UICollectionView,
-        viewForSupplementaryElementOfKind kind: String,
-        at indexPath: IndexPath
-    ) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: "headerCell",
-                for: indexPath
-            )
-            guard let headerView = headerView as? HeaderView else {
-                return headerView
-            }
-            headerView.relatedLabel.text = NSLocalizedString("related", comment: "")
-
-            return headerView
-        default:
-            fatalError("Unexpected element kind")
-        }
-    }
+//    func collectionView(
+//        _ collectionView: UICollectionView,
+//        viewForSupplementaryElementOfKind kind: String,
+//        at indexPath: IndexPath
+//    ) -> UICollectionReusableView {
+//        switch kind {
+//        case UICollectionView.elementKindSectionHeader:
+//            let headerView = collectionView.dequeueReusableSupplementaryView(
+//                ofKind: kind,
+//                withReuseIdentifier: HeaderView.identifier,
+//                for: indexPath
+//            )
+//            guard let headerView = headerView as? HeaderView else {
+//                return headerView
+//            }
+//            headerView.relatedLabel.text = NSLocalizedString("related", comment: "")
+//
+//            return headerView
+//        default:
+//            fatalError("Unexpected element kind")
+//        }
+//    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
