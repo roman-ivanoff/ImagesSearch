@@ -19,19 +19,20 @@ class ImageModel {
         onSuccess: @escaping([ImageHit]) -> Void,
         onError: @escaping(ServiceError) -> Void
     ) {
+        isLoading = true
+
         imageHitService.getImages(imageId: imageId) { [weak self] (result: Result<PixabayImages, ServiceError>) in
             guard let self else {
                 return
             }
 
-            self.isLoading = true
-
             switch result {
             case let .success(data):
                 self.images = data.hits
-                onSuccess(data.hits)
                 self.isLoading = false
+                onSuccess(data.hits)
             case let .failure(error):
+                self.isLoading = false
                 onError(error)
             }
         }

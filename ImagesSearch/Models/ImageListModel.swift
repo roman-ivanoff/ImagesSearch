@@ -26,6 +26,8 @@ class ImageListModel {
         onSucces: @escaping([ImageHit]) -> Void,
         onError: @escaping(ServiceError) -> Void
     ) {
+        isLoading = true
+
         imageHitService.getImages(
             searchTerm: searchTerm,
             imageType: imageType,
@@ -35,16 +37,16 @@ class ImageListModel {
             guard let self else {
                 return
             }
-            self.isLoading = true
 
             switch result {
             case let .success(data):
                 self.images.append(contentsOf: data.hits)
                 self.hits = data.total
                 self.tags = self.getTags()
-                onSucces(data.hits)
                 self.isLoading = false
+                onSucces(data.hits)
             case let .failure(error):
+                self.isLoading = false
                 onError(error)
             }
         }

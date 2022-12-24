@@ -55,7 +55,7 @@ class ImagesListViewController: UIViewController {
     }
 
     private func toggleActivityIndicator(_ isLoading: Bool) {
-        isLoading ? indicator.stopAnimating() : indicator.startAnimating()
+        isLoading ? indicator.startAnimating() : indicator.stopAnimating()
     }
 
     private func fetchImages() {
