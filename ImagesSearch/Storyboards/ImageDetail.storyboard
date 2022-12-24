@@ -66,13 +66,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free for commercial use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjD-uk-HUu">
-                                <rect key="frame" x="16" y="391.33333333333326" width="158" height="19.333333333333314"/>
+                                <rect key="frame" x="16" y="391.33333333333331" width="158" height="19.333333333333314"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" name="textFieldFontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No attribution required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WQ-Bs-kdI">
-                                <rect key="frame" x="16" y="416.66666666666674" width="152.66666666666666" height="19.333333333333314"/>
+                                <rect key="frame" x="16" y="416.66666666666669" width="152.66666666666666" height="19.333333333333314"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" name="textFieldFontColor"/>
                                 <nil key="highlightedColor"/>
@@ -155,13 +155,13 @@
                                 <rect key="frame" x="185" y="412" width="20" height="20"/>
                             </activityIndicatorView>
                             <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="zBI-Oq-wwp">
-                                <rect key="frame" x="0.0" y="91" width="390" height="753"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="797"/>
                                 <subviews>
                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T23-T1-Ny6">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="797"/>
                                     </imageView>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoz-5e-742">
-                                        <rect key="frame" x="330" y="693" width="44" height="44"/>
+                                        <rect key="frame" x="330" y="737" width="44" height="44"/>
                                         <color key="backgroundColor" name="lineGrayColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="5VL-5M-fOU"/>
@@ -257,10 +257,9 @@
         <!--Navigation Controller-->
         <scene sceneID="u2P-Js-AJs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Ku-za-kqt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3Ku-za-kqt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HDT-eC-IR3" customClass="ImageSearchNavBar" customModule="ImagesSearch" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

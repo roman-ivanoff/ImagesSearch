@@ -105,10 +105,9 @@
         <!--Navigation Controller-->
         <scene sceneID="krR-r7-6jg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tte-G8-2Nc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Tte-G8-2Nc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d9b-uo-w80" customClass="ImageSearchNavBar" customModule="ImagesSearch" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
