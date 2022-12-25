@@ -43,6 +43,7 @@
 		FD9C7D29292E78C0008BD1DF /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */; };
 		FDB0B168293CC2DE0026D7AD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */; };
 		FDB0B169293CC2DE0026D7AD /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */; };
+		FDB469052958E29B009839BD /* UIViewController+Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB469042958E29B009839BD /* UIViewController+Customization.swift */; };
 		FDBB8371293E3597008AD521 /* SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB8370293E3597008AD521 /* SearchDelegate.swift */; };
 		FDBB8375293E4B54008AD521 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB8374293E4B54008AD521 /* ImageModel.swift */; };
 		FDDF09C32942338D00E4C93D /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF09C22942338D00E4C93D /* ShareButton.swift */; };
@@ -99,6 +100,7 @@
 		FD9C7D28292E78C0008BD1DF /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		FDB0B166293CC2DE0026D7AD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FDB0B167293CC2DE0026D7AD /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		FDB469042958E29B009839BD /* UIViewController+Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Customization.swift"; sourceTree = "<group>"; };
 		FDBB8370293E3597008AD521 /* SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDelegate.swift; sourceTree = "<group>"; };
 		FDBB8374293E4B54008AD521 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		FDDF09C22942338D00E4C93D /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				FD9C7D11292E75AA008BD1DF /* UIButton+Configuration.swift */,
 				FD3319BF294270B800FBBD2C /* UICollectionView+Configuration.swift */,
 				FD29F62F294F2C930066416E /* UIView+Configuration.swift */,
+				FDB469042958E29B009839BD /* UIViewController+Customization.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				FD998AE7293818B40093E5DD /* ImageListModel.swift in Sources */,
 				FD340D53292CC34700B40917 /* AppDelegate.swift in Sources */,
 				FDBB8375293E4B54008AD521 /* ImageModel.swift in Sources */,
+				FDB469052958E29B009839BD /* UIViewController+Customization.swift in Sources */,
 				FD3319BE2942709400FBBD2C /* SMIdentifiable.swift in Sources */,
 				FDFC281A292F69BB00649E88 /* DropdownButtonWIthBorder.swift in Sources */,
 				FDE5E67A2952810F0054089B /* TagCollectionView.swift in Sources */,

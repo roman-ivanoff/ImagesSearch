@@ -94,16 +94,16 @@ class ImagesListViewController: UIViewController {
         collectionView.isHidden = false
     }
 
-    private func showErrorAlert(title: String, message: String) {
-        let dialogMessage = UIAlertController(
-            title: title,
-            message: message,
-            preferredStyle: .alert
-        )
-        let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel)
-        dialogMessage.addAction(okAction)
-        present(dialogMessage, animated: true)
-    }
+//    private func showErrorAlert(title: String, message: String) {
+//        let dialogMessage = UIAlertController(
+//            title: title,
+//            message: message,
+//            preferredStyle: .alert
+//        )
+//        let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel)
+//        dialogMessage.addAction(okAction)
+//        present(dialogMessage, animated: true)
+//    }
 
     private func fetchNewImages(searchTerm: String) {
         imageModel.images = []

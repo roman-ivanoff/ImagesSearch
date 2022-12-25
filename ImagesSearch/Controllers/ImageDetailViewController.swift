@@ -151,30 +151,30 @@ class ImageDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
-    private func showErrorAlert(title: String, message: String) {
-        let dialogMessage = UIAlertController(
-            title: title,
-            message: message,
-            preferredStyle: .alert
-        )
-        let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel)
-        dialogMessage.addAction(okAction)
-        present(dialogMessage, animated: true)
-    }
+//    private func showErrorAlert(title: String, message: String) {
+//        let dialogMessage = UIAlertController(
+//            title: title,
+//            message: message,
+//            preferredStyle: .alert
+//        )
+//        let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel)
+//        dialogMessage.addAction(okAction)
+//        present(dialogMessage, animated: true)
+//    }
 
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            showErrorAlert(
-                title: NSLocalizedString("error", comment: ""),
-                message: error.localizedDescription
-            )
-        } else {
-            showErrorAlert(
-                title: NSLocalizedString("success", comment: ""),
-                message: NSLocalizedString("image_saved", comment: "")
-            )
-        }
-    }
+//    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+//        if let error = error {
+//            showErrorAlert(
+//                title: NSLocalizedString("error", comment: ""),
+//                message: error.localizedDescription
+//            )
+//        } else {
+//            showErrorAlert(
+//                title: NSLocalizedString("success", comment: ""),
+//                message: NSLocalizedString("image_saved", comment: "")
+//            )
+//        }
+//    }
 
     private func showZoomViews() {
         scrollView.isHidden = false
@@ -213,7 +213,7 @@ class ImageDetailViewController: UIViewController {
         UIImageWriteToSavedPhotosAlbum(
             selectedImage,
             self,
-            #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+            #selector(imageAlert(_:didFinishSavingWithError:contextInfo:)), nil)
     }
 
     @IBAction func finishZoomAction(_ sender: UIButton) {
