@@ -8,5 +8,6 @@ target 'ImagesSearch' do
   # Pods for ImagesSearch
 	pod 'DropDown'
 	pod 'Kingfisher', '~> 7.0'
+	pod 'CropViewController'
 
 end

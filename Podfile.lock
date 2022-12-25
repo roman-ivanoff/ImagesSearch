@@ -1,20 +1,24 @@
 PODS:
+  - CropViewController (2.6.1)
   - DropDown (2.3.13)
   - Kingfisher (7.4.1)
 
 DEPENDENCIES:
+  - CropViewController
   - DropDown
   - Kingfisher (~> 7.0)
 
 SPEC REPOS:
   trunk:
+    - CropViewController
     - DropDown
     - Kingfisher
 
 SPEC CHECKSUMS:
+  CropViewController: 58fb440f30dac788b129d2a1f24cffdcb102669c
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
 
-PODFILE CHECKSUM: ac28857c04253636d25e3119309151a076d68320
+PODFILE CHECKSUM: e7575447be8c131d419e9792764a5668a93983da
 
 COCOAPODS: 1.11.3
