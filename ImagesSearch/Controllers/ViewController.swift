@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import CropViewController
 
 // swiftlint:disable: force_cast
 class ViewController: UIViewController {
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
 
     // MARK: - Properties
     let dropDown = DropDown()
+    let picker = UIImagePickerController()
     var dropdownButtonWIthBorder: DropdownButtonWIthBorder!
     let imageTypes: [ImageType] = [.all, .photo, .illustration, .vector]
 //    var imageType = ImageType.photo.apiOption
@@ -112,6 +114,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openPhotoLibraryAction(_ sender: SearchButton) {
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        present(picker, animated: true)
     }
 
     @IBAction func searchAction(_ sender: Any) {
@@ -143,4 +148,43 @@ extension ViewController: UITextFieldDelegate {
 extension ViewController: UINavigationControllerDelegate {
 }
 
-extension ViewController: UIImagePickerControllerDelegate {}
+extension ViewController: UIImagePickerControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+    ) {
+        guard let image = info[.originalImage] as? UIImage else {
+            return
+        }
+        picker.dismiss(animated: true)
+
+        cropImage(image: image, delegate: self)
+    }
+}
+
+extension ViewController: CropViewControllerDelegate {
+    func cropViewController(_ cropViewController: CropViewController, didFinishCancelled cancelled: Bool) {
+        cropViewController.dismiss(animated: true)
+        present(picker, animated: true)
+    }
+
+    func cropViewController(
+        _ cropViewController: CropViewController,
+        didCropToImage image: UIImage,
+        withRect cropRect: CGRect,
+        angle: Int
+    ) {
+        UIImageWriteToSavedPhotosAlbum(
+            image,
+            self,
+            #selector(imageAlert(_:didFinishSavingWithError:contextInfo:)),
+            nil
+        )
+        cropViewController.dismiss(animated: true)
+        present(picker, animated: true)
+    }
+}
