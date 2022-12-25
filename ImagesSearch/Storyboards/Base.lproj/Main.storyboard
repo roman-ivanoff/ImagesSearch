@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search images, vectors and more" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2d-IP-jSn" customClass="SearchTextField" customModule="ImagesSearch" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="243.5" width="343" height="52"/>
+                                                <rect key="frame" x="16" y="237" width="343" height="52"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="52" id="5zG-pP-oKd"/>
                                                 </constraints>
@@ -47,7 +47,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKl-wf-zqk" customClass="SearchButton" customModule="ImagesSearch" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="324.5" width="343" height="52"/>
+                                                <rect key="frame" x="16" y="318" width="343" height="52"/>
                                                 <color key="backgroundColor" name="violetColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="52" id="3k5-An-CdV"/>
@@ -59,6 +59,21 @@
                                                     <action selector="searchAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xJq-HR-jMU"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGQ-yX-MyW" customClass="SearchButton" customModule="ImagesSearch" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="378" width="343" height="52"/>
+                                                <color key="backgroundColor" name="violetColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="VcP-Tm-rjv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Photo Library">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openPhotoLibraryAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D6R-fj-Y82"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo by Free-Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-tA-Ujp">
                                                 <rect key="frame" x="127" y="634.5" width="121" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
@@ -66,22 +81,22 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhi-qz-An8" userLabel="2">
-                                                <rect key="frame" x="0.0" y="192.5" width="375" height="43"/>
+                                                <rect key="frame" x="0.0" y="188.5" width="375" height="40.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="6PI-Ya-h5J"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6B6-fz-Ea6" userLabel="1">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhG-1T-weE" userLabel="3">
-                                                <rect key="frame" x="0.0" y="376.5" width="375" height="258"/>
+                                                <rect key="frame" x="0.0" y="430" width="375" height="204.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabierz swoich odbiorców na wizualną przygodę" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zn0-dj-MDg">
-                                                <rect key="frame" x="20" y="86" width="335" height="106.5"/>
+                                                <rect key="frame" x="20" y="82" width="335" height="106.5"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -89,8 +104,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="JhG-1T-weE" firstAttribute="height" secondItem="Dhi-qz-An8" secondAttribute="height" multiplier="6" id="0DA-sJ-S2M"/>
-                                            <constraint firstItem="JhG-1T-weE" firstAttribute="top" secondItem="ZKl-wf-zqk" secondAttribute="bottom" id="0Fh-xq-Oyd"/>
+                                            <constraint firstItem="JhG-1T-weE" firstAttribute="height" secondItem="Dhi-qz-An8" secondAttribute="height" multiplier="5" id="0DA-sJ-S2M"/>
                                             <constraint firstAttribute="trailing" secondItem="ZKl-wf-zqk" secondAttribute="trailing" constant="16" id="0Id-XI-yLJ"/>
                                             <constraint firstItem="6B6-fz-Ea6" firstAttribute="height" secondItem="Dhi-qz-An8" secondAttribute="height" multiplier="2" id="5Hd-Q2-qJ7"/>
                                             <constraint firstAttribute="trailing" secondItem="E2d-IP-jSn" secondAttribute="trailing" constant="16" id="6Ia-Lf-wq6"/>
@@ -98,16 +112,20 @@
                                             <constraint firstItem="RkC-tA-Ujp" firstAttribute="centerX" secondItem="3Gp-ir-tCD" secondAttribute="centerX" id="9ec-89-YgL"/>
                                             <constraint firstItem="6B6-fz-Ea6" firstAttribute="top" secondItem="3Gp-ir-tCD" secondAttribute="top" id="JA0-tJ-h3y"/>
                                             <constraint firstItem="Zn0-dj-MDg" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" constant="20" id="K35-Fo-PTS"/>
+                                            <constraint firstItem="JhG-1T-weE" firstAttribute="top" secondItem="iGQ-yX-MyW" secondAttribute="bottom" id="LgG-RI-vbe"/>
+                                            <constraint firstItem="iGQ-yX-MyW" firstAttribute="top" secondItem="ZKl-wf-zqk" secondAttribute="bottom" constant="8" id="NSJ-8n-uf6"/>
                                             <constraint firstItem="E2d-IP-jSn" firstAttribute="top" secondItem="Dhi-qz-An8" secondAttribute="bottom" constant="8" id="NTc-7n-ICq"/>
                                             <constraint firstItem="E2d-IP-jSn" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" constant="16" id="Ygv-xB-lzt"/>
                                             <constraint firstItem="ZKl-wf-zqk" firstAttribute="top" secondItem="E2d-IP-jSn" secondAttribute="bottom" constant="29" id="ckX-oP-44O"/>
                                             <constraint firstItem="ZKl-wf-zqk" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" constant="16" id="csu-7y-NTK"/>
+                                            <constraint firstAttribute="trailing" secondItem="iGQ-yX-MyW" secondAttribute="trailing" constant="16" id="dOy-IE-0ud"/>
                                             <constraint firstAttribute="trailing" secondItem="6B6-fz-Ea6" secondAttribute="trailing" id="ePW-dd-tF9"/>
                                             <constraint firstItem="RkC-tA-Ujp" firstAttribute="top" secondItem="JhG-1T-weE" secondAttribute="bottom" id="eyh-Kx-dvT"/>
                                             <constraint firstItem="Dhi-qz-An8" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" id="i9d-xS-eTr"/>
                                             <constraint firstItem="JhG-1T-weE" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" id="iHZ-45-Jay"/>
                                             <constraint firstItem="Zn0-dj-MDg" firstAttribute="top" secondItem="6B6-fz-Ea6" secondAttribute="bottom" id="igS-kf-eeD"/>
                                             <constraint firstAttribute="trailing" secondItem="Zn0-dj-MDg" secondAttribute="trailing" constant="20" id="kcZ-2D-OMe"/>
+                                            <constraint firstItem="iGQ-yX-MyW" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" constant="16" id="l07-zc-hIr"/>
                                             <constraint firstItem="6B6-fz-Ea6" firstAttribute="leading" secondItem="3Gp-ir-tCD" secondAttribute="leading" id="oMF-y0-rfb"/>
                                             <constraint firstAttribute="trailing" secondItem="JhG-1T-weE" secondAttribute="trailing" id="pe0-Pe-42k"/>
                                             <constraint firstAttribute="bottom" secondItem="RkC-tA-Ujp" secondAttribute="bottom" constant="16" id="rXz-5z-Mpf"/>

@@ -111,6 +111,9 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func openPhotoLibraryAction(_ sender: SearchButton) {
+    }
+
     @IBAction func searchAction(_ sender: Any) {
         guard let searchQuery = searchTextField.text,
               !searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
@@ -136,3 +139,8 @@ extension ViewController: UITextFieldDelegate {
         return true
     }
 }
+
+extension ViewController: UINavigationControllerDelegate {
+}
+
+extension ViewController: UIImagePickerControllerDelegate {}
