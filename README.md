@@ -20,5 +20,5 @@ Pixabay free images search app.
 - Design instruments: Figma
 - TOCropViewController
 
-![](https://github.com/roman-ivanoff/WebsiteFilter/blob/main/1.gif) ![](https://github.com/roman-ivanoff/WebsiteFilter/blob/main/2.gif) ![](https://github.com/roman-ivanoff/WebsiteFilter/blob/main/3.gif)
-![](https://github.com/roman-ivanoff/WebsiteFilter/blob/main/4.gif) ![](https://github.com/roman-ivanoff/WebsiteFilter/blob/main/5.gif)
+![](https://github.com/roman-ivanoff/ImagesSearch/blob/main/1.gif) ![](https://github.com/roman-ivanoff/ImagesSearch/blob/main/2.gif) ![](https://github.com/roman-ivanoff/ImagesSearch/blob/main/3.gif)
+![](https://github.com/roman-ivanoff/ImagesSearch/blob/main/4.gif) ![](https://github.com/roman-ivanoff/ImagesSearch/blob/main/5.gif)
